@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { BookOpen, Droplets, Scissors, Banknote } from 'lucide-react';
+import { BookOpen, Droplets, Scissors, Banknote, Sparkles } from 'lucide-react';
+import ImagePlaceholder from '../common/ImagePlaceholder';
 
 export default function CurriculumTimeline() {
   const [selectedWeek, setSelectedWeek] = useState(0);
@@ -7,63 +8,71 @@ export default function CurriculumTimeline() {
   const weeks = [
     {
       weekNum: 'WEEK 01',
-      title: 'Understand & Sowing',
-      theme: 'The Seed & Soil Mystery',
+      title: 'Waste Becomes a Farm',
+      theme: 'Container Engineering & Sowing',
       icon: BookOpen,
-      badgeColor: 'bg-[#C0F038]',
-      summary: 'Demystifying where nutrition comes from. Children set up the Cone Garden, test soil moisture, and sow their first seeds.',
+      imageSrc: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80',
+      imageAlt: 'Recycled containers, sacks, and bottles turned into growing beds',
+      uploadNote: 'Photo: Sorting waste & assembling gardens',
+      summary: 'Children sort household waste, drill drainage holes, and construct bottle, sack, and bucket gardens alongside setting up the Cone Garden.',
       activities: [
-        'Seed dissection: Understanding embryology and water activation',
-        'Cone Garden assembly: Building the vertical water channel system',
-        'Germination logs: Charting expected sprout dates for microgreens & oyster mushrooms',
-        'Setting the Dream Goal: What will you save your harvest earnings toward?',
+        'Waste-to-Farm conversion: transforming plastic bottles and sacks into self-draining pots',
+        'Cone Garden setup: assembling durable HDPE vertical sheets in a compact 1m² space',
+        'Embryology lesson: dissecting seeds to understand water activation and root geotropism',
+        'Setting the Dream Goal: deciding what each child will save for with their harvest profit',
       ],
-      skills: ['Plant Biology', 'Water Circulation', 'Goal Setting'],
+      skills: ['Waste Recycling', 'Soil Science Basics', 'Goal Setting'],
     },
     {
       weekNum: 'WEEK 02',
-      title: 'Daily Care & Problem-Solving',
-      theme: 'Patience & Daily Routine',
+      title: 'Building Soil & Planting',
+      theme: 'Compost Chemistry & Seed Depths',
       icon: Droplets,
-      badgeColor: 'bg-[#C0F038]',
-      summary: 'Establishing steady discipline. Learners conduct morning moisture checks, monitor sunlight exposure, and document growth stages.',
+      imageSrc: 'https://images.unsplash.com/photo-1592417817098-8f3d6ef23a41?auto=format&fit=crop&w=600&q=80',
+      imageAlt: 'Children layering compost and planting seeds in soil',
+      uploadNote: 'Photo: Layering mini-compost bucket',
+      summary: 'Learners layer organic food scraps into mini-compost buckets and plant fast-growing indigenous crops like dodo (amaranth), lettuce, and spinach.',
       activities: [
-        'Daily watering schedules and water conservation metrics',
-        'Spotting nutrient deficiencies and managing pests with organic companion planting',
-        'Mushroom misting: Regulating humidity in mushroom fruiting chambers',
-        'Mid-cycle math: Calculating daily growth rate in centimeters',
+        'Mini-compost bucket creation: balancing green nitrogen scraps with dry carbon matter',
+        'Sowing dodo (amaranth), spinach, and oyster mushroom blocks at precise seed depths',
+        'Daily watering schedules: calculating ml of water needed per plant to prevent evaporation',
+        'Mixed-age mentoring: older children (10–14) guide younger partners (6–9) on gentle handling',
       ],
-      skills: ['Daily Discipline', 'Scientific Observation', 'Ecosystem Care'],
+      skills: ['Composting Chemistry', 'Companion Planting', 'Peer Mentorship'],
     },
     {
       weekNum: 'WEEK 03',
-      title: 'The Harvest & Quality Control',
-      theme: 'Effort Becomes Tangible',
+      title: 'Smart Care & The Plant Doctor',
+      theme: 'Low-Tech Irrigation & Analog AI',
       icon: Scissors,
-      badgeColor: 'bg-[#C0F038]',
-      summary: 'Reaping the rewards of weeks of care. Learners harvest with sterile scissors, clean produce, and calculate total yield.',
+      imageSrc: 'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=600&q=80',
+      imageAlt: 'Young learners checking plant leaves and drip irrigation',
+      uploadNote: 'Photo: Analog AI plant decision tree',
+      summary: 'Children build gravity drip irrigation, make organic garlic-chili sprays, and use a screen-free "Decision Tree" flowchart to diagnose plant health.',
       activities: [
-        'Harvesting protocols: Cutting microgreens cleanly above root line',
-        'Weighing and batch sorting: Using digital scales and recording yields',
-        'Packaging with biodegradable wraps and handwritten Little Farmer labels',
-        'Nutritional taste testing: Sampling fresh homegrown food with classmates',
+        'Building DIY drip irrigation using recycled bottles and cotton wicks',
+        'The Plant Doctor: diagnosing leaf discoloration, pests, and moisture levels',
+        'Analog AI Explorer: screen-free decision tree flowchart introducing algorithmic if/then logic',
+        'Brewing natural garlic, neem, and chili organic pesticide spray',
       ],
-      skills: ['Quality Standards', 'Food Hygiene', 'Data Recording'],
+      skills: ['Computational Logic', 'Drip Irrigation', 'Organic Pest Control'],
     },
     {
       weekNum: 'WEEK 04',
-      title: 'Market Day & The DreamDo Bank',
-      theme: 'From First Harvest to First Sale',
+      title: 'Market Day & Harvest',
+      theme: 'Live Commerce & DreamDo Bank',
       icon: Banknote,
-      badgeColor: 'bg-[#E25822] text-white',
-      summary: 'The culmination of the journey. Children host a campus market stall, sell their produce to teachers and parents, and save earnings.',
+      imageSrc: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80',
+      imageAlt: 'Children with harvest produce and saving boxes at school market',
+      uploadNote: 'Photo: Live Market Day & Saving Box',
+      summary: 'The grand finale. Children harvest baby greens, calculate production costs and fair prices, run a live campus market stall, and deposit earnings.',
       activities: [
-        'Pricing & Unit Economics: Cost per punnet vs market demand in Kigali',
-        'Campus Market Stall: Customer interaction, sales pitches, and making change',
-        'The DreamDo Bank Deposit: Counting net profit and locking funds in savings boxes',
-        'Graduation Ceremony: Receiving the Young Maker Certificate and Badge',
+        'Harvesting baby dodo greens and oyster mushrooms with food safety hygiene',
+        'Packaging with Adoption Kits (containers parents take home) and organic compost',
+        'Market Day Pitch: presenting harvest journals, explaining pricing, and making transactions',
+        'The DreamDo Bank deposit ceremony: recording savings in personal ledgers',
       ],
-      skills: ['Sales & Customer Service', 'Accounting & Profit', 'Delayed Gratification'],
+      skills: ['Sales & Negotiation', 'Profit Calculation', 'Financial Self-Reliance'],
     },
   ];
 
@@ -74,13 +83,13 @@ export default function CurriculumTimeline() {
         {/* Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
           <span className="text-[11px] font-bold tracking-[0.2em] text-[#E25822] uppercase font-mono mb-2 block">
-            THE 4-WEEK CURRICULUM
+            THE 4-WEEK PROGRAM PLAYBOOK
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#143A22] tracking-tight mb-4">
-            A step-by-step pathway from seed to first deposit.
+            Curriculum designed for real hands and real results.
           </h2>
           <p className="text-base sm:text-lg text-[#556358] leading-relaxed">
-            Click through each week of the Little Farmer curriculum to see how biological science and entrepreneurial finance weave into every session.
+            Delivered in 4 weekly sessions (3 hours per session) for cohorts of 10 children, led by a trained facilitator with age-differentiated tasks for ages 6–14.
           </p>
         </div>
 
@@ -109,15 +118,15 @@ export default function CurriculumTimeline() {
           ))}
         </div>
 
-        {/* Selected Week Detail Card */}
+        {/* Selected Week Detail Card with Photo Placeholder */}
         {(() => {
           const current = weeks[selectedWeek];
-          const Icon = current.icon;
           return (
-            <div className="bg-[#FAF8F5] rounded-3xl p-8 sm:p-12 border border-black/5 shadow-2xs">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <div className="bg-[#FAF8F5] rounded-3xl p-6 sm:p-10 border border-black/5 shadow-2xs">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 
-                <div className="lg:col-span-6 space-y-4">
+                {/* Left Description & Activities */}
+                <div className="lg:col-span-7 space-y-4">
                   <div className="inline-flex items-center gap-2">
                     <span className="px-3 py-1 rounded-full bg-[#143A22] text-white text-xs font-mono font-bold">
                       {current.weekNum}
@@ -135,10 +144,23 @@ export default function CurriculumTimeline() {
                     {current.summary}
                   </p>
 
-                  <div className="pt-4">
-                    <div className="text-xs font-bold text-[#143A22] uppercase tracking-wider mb-2">
-                      Core Competencies Mastered
+                  <div className="bg-white rounded-2xl p-5 border border-black/5">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#E25822] mb-3">
+                      Hands-On Tasks in This Session:
                     </div>
+                    <ul className="space-y-2.5">
+                      {current.activities.map((act, i) => (
+                        <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#465349]">
+                          <span className="w-4 h-4 rounded-full bg-[#C0F038] text-[#143A22] font-bold text-[10px] flex items-center justify-center shrink-0 mt-0.5">
+                            {i + 1}
+                          </span>
+                          <span>{act}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="pt-2">
                     <div className="flex flex-wrap gap-2">
                       {current.skills.map((s, i) => (
                         <span key={i} className="px-3 py-1 rounded-full bg-white border border-black/10 text-xs font-semibold text-[#143A22]">
@@ -149,20 +171,20 @@ export default function CurriculumTimeline() {
                   </div>
                 </div>
 
-                <div className="lg:col-span-6 bg-white rounded-2xl p-6 sm:p-8 border border-black/5">
-                  <div className="text-xs font-bold uppercase tracking-wider text-[#E25822] mb-4">
-                    Hands-On Activities in This Module
+                {/* Right Photo Card */}
+                <div className="lg:col-span-5">
+                  <ImagePlaceholder
+                    src={current.imageSrc}
+                    alt={current.imageAlt}
+                    badge={`${current.weekNum} Activity`}
+                    aspectRatio="aspect-[4/3]"
+                    uploadNote={current.uploadNote}
+                    caption={current.theme}
+                    className="rounded-2xl"
+                  />
+                  <div className="mt-3 p-3 bg-white/70 rounded-xl border border-black/5 text-[11px] text-[#6A786E]">
+                    <strong className="text-[#143A22]">Mixed-age pairing:</strong> Older children (10–14) act as "Farm Mentors" supporting younger peers (6–9).
                   </div>
-                  <ul className="space-y-3">
-                    {current.activities.map((act, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm text-[#465349]">
-                        <span className="w-5 h-5 rounded-full bg-[#C0F038]/60 text-[#143A22] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
-                          {i + 1}
-                        </span>
-                        <span className="leading-relaxed">{act}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
 
               </div>
@@ -174,4 +196,3 @@ export default function CurriculumTimeline() {
     </section>
   );
 }
-

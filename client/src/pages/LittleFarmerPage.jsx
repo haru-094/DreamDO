@@ -2,6 +2,7 @@ import React from 'react';
 import ProgramHero from '../components/little-farmer/ProgramHero';
 import CurriculumTimeline from '../components/little-farmer/CurriculumTimeline';
 import KitShowcase from '../components/little-farmer/KitShowcase';
+import PilotSpotlight from '../components/little-farmer/PilotSpotlight';
 import TracksSection from '../components/little-farmer/TracksSection';
 import CropCalculator from '../components/home/CropCalculator';
 import ProgramFaq from '../components/little-farmer/ProgramFaq';
@@ -13,6 +14,7 @@ export default function LittleFarmerPage({ onOpenPartnerModal }) {
       <ProgramHero onOpenPartnerModal={onOpenPartnerModal} />
       <CurriculumTimeline />
       <KitShowcase />
+      <PilotSpotlight onOpenPartnerModal={onOpenPartnerModal} />
       <TracksSection onOpenPartnerModal={onOpenPartnerModal} />
       <CropCalculator />
       <ProgramFaq onOpenPartnerModal={onOpenPartnerModal} />
@@ -20,4 +22,3 @@ export default function LittleFarmerPage({ onOpenPartnerModal }) {
     </>
   );
 }
-

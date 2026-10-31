@@ -1,31 +1,45 @@
 import React from 'react';
-import { Layers, Check, Sparkles } from 'lucide-react';
+import { Check } from 'lucide-react';
+import ImagePlaceholder from '../common/ImagePlaceholder';
 
 export default function KitShowcase() {
   const tools = [
     {
       name: 'Vertical Cone Garden',
       tag: 'GROWTH HARDWARE',
-      desc: 'Engineered for dense urban schools and homes. Recirculating vertical irrigation system holding 50+ seedlings in under 1 square meter footprint.',
-      features: ['Food-grade UV-safe polymer', 'Gravity-assisted water distribution', 'Indoor & outdoor adaptable'],
+      desc: 'Space-saving vertical garden made from durable HDPE sheets. Strong and weather-resistant with a lifespan of up to 20 years with proper care. Occupies < 1m² footprint.',
+      features: ['20-year durable HDPE construction', 'Holds 50+ seedlings in < 1m²', 'Water & soil efficient'],
+      imageSrc: '/images/school-cone-garden.jpg',
+      isAuthentic: true,
+      badge: 'Durable HDPE Cone',
+      uploadNote: 'Photo: School Cone Garden',
     },
     {
       name: 'Mission Cards & Logbook',
-      tag: 'CURRICULUM SYSTEM',
-      desc: '28 daily illustrated bite-sized challenges connecting biology, math, weather measurement, and ethical teamwork.',
-      features: ['Daily checklists & observation charts', 'Vocabulary & ecosystem prompts', 'Reflection journal prompts'],
+      tag: 'SCREEN-FREE PLAYBOOK',
+      desc: '28 illustrated daily missions connecting biology, math, and water metrics. Includes the screen-free Analog AI plant health decision tree flowchart.',
+      features: ['Screen-free Analog AI decision tree', 'Age-differentiated checklists', 'Growth & moisture tracking'],
+      imageSrc: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80',
+      badge: 'Mission Playbook',
+      uploadNote: 'Photo: Mission cards in class',
     },
     {
       name: 'The DreamDo Saving Box',
-      tag: 'MERIT SAVINGS VAULT',
-      desc: 'A physical wooden bank with a double-entry ledger sheet where every harvest sale deposit is countersigned and saved toward a target dream.',
-      features: ['Physical dual-key locking mechanism', 'Personal savings goal ledger', 'Builds tactile habit of saving'],
+      tag: 'FINANCIAL VAULT',
+      desc: 'A physical wooden savings box that connects crop sales directly to saving. Comes with a double-entry ledger sheet where every harvest deposit is recorded.',
+      features: ['Dual-key physical locking', 'Countersigned savings ledger', 'Direct link from harvest to dreams'],
+      imageSrc: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80',
+      badge: 'Physical Saving Box',
+      uploadNote: 'Photo: Child saving coins',
     },
     {
-      name: 'Starter Seed & Substrate Pack',
+      name: 'Starter Seeds & Compost Pack',
       tag: 'BIOLOGICAL INPUTS',
-      desc: 'Heirloom fast-growing seeds and sterile oyster mushroom substrate inoculated for fast, reliable, and high-yield student success.',
-      features: ['Sunflower, radish, & kale seeds', 'Pre-inoculated oyster mushroom fruiting block', 'Organic seedling starter soil'],
+      desc: 'Fast-harvesting, climate-adapted seeds including indigenous dodo (amaranth), spinach, lettuce, and inoculated oyster mushroom fruiting blocks.',
+      features: ['Fast 7–21 day harvest turnaround', 'Heirloom indigenous seeds', 'Compost & organic substrate starter'],
+      imageSrc: 'https://images.unsplash.com/photo-1592417817098-8f3d6ef23a41?auto=format&fit=crop&w=600&q=80',
+      badge: 'Seed & Substrate Pack',
+      uploadNote: 'Photo: Seeds & young sprouts',
     },
   ];
 
@@ -38,24 +52,36 @@ export default function KitShowcase() {
             THE HARDWARE & LEARNING KIT
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Everything needed to launch a school food enterprise.
+            Physical tools built to last two decades.
           </h2>
           <p className="text-base sm:text-lg text-white/70 leading-relaxed">
-            Little Farmer is not just a digital concept — it is a physical, tactile system delivered directly to classrooms and families in Rwanda.
+            Little Farmer is an enduring asset. One Cone Garden investment of 40,000 RWF serves continuous cohorts of children year after year in land-constrained schools and refugee communities.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {tools.map((t, idx) => (
             <div
               key={idx}
-              className="bg-white/5 border border-white/10 rounded-3xl p-7 sm:p-9 flex flex-col justify-between hover:border-[#C0F038]/50 transition-all duration-300"
+              className="bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-[#C0F038]/50 transition-all duration-300"
             >
               <div>
-                <span className="text-[10px] font-mono font-bold tracking-widest text-[#C0F038] uppercase block mb-2">
+                <div className="mb-5">
+                  <ImagePlaceholder
+                    src={t.imageSrc}
+                    alt={t.name}
+                    badge={t.badge}
+                    isAuthentic={t.isAuthentic}
+                    aspectRatio="aspect-[16/10]"
+                    uploadNote={t.uploadNote}
+                    className="rounded-2xl"
+                  />
+                </div>
+
+                <span className="text-[10px] font-mono font-bold tracking-widest text-[#C0F038] uppercase block mb-1">
                   {t.tag}
                 </span>
-                <h3 className="text-2xl font-bold text-white mb-3">
+                <h3 className="text-2xl font-bold text-white mb-2">
                   {t.name}
                 </h3>
                 <p className="text-sm text-white/70 leading-relaxed mb-6">
@@ -79,4 +105,3 @@ export default function KitShowcase() {
     </section>
   );
 }
-
