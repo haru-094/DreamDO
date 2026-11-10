@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Globe } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function Navbar({ onOpenPartnerModal }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,9 +18,9 @@ export default function Navbar({ onOpenPartnerModal }) {
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Little Farmer', path: '/little-farmer' },
-    { name: 'About', path: '/about' },
+    { name: t('navHome'), path: '/' },
+    { name: t('navLittleFarmer'), path: '/little-farmer' },
+    { name: t('navAbout'), path: '/about' },
   ];
 
   const isActive = (path) => {
@@ -54,7 +56,7 @@ export default function Navbar({ onOpenPartnerModal }) {
               const active = isActive(link.path);
               return (
                 <Link
-                  key={link.name}
+                  key={link.path}
                   to={link.path}
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                   className={`text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full transition-all duration-200 ${
@@ -69,18 +71,39 @@ export default function Navbar({ onOpenPartnerModal }) {
             })}
           </nav>
 
-          {/* Desktop Action Button */}
-          <div className="hidden md:flex items-center">
+          {/* Desktop Action & Language Switcher */}
+          <div className="hidden md:flex items-center gap-3">
+            {/* Language Switcher Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold border border-black/10 hover:border-black/20 bg-white/80 text-[#143A22] transition-all cursor-pointer shadow-2xs"
+              title="Toggle English / Ikinyarwanda"
+              aria-label="Change language"
+            >
+              <Globe size={13} className="text-[#E25822]" />
+              <span className={language === 'en' ? 'font-black text-[#143A22]' : 'text-gray-400 font-normal'}>EN</span>
+              <span className="text-gray-300">/</span>
+              <span className={language === 'rw' ? 'font-black text-[#143A22]' : 'text-gray-400 font-normal'}>RW</span>
+            </button>
+
             <button
               onClick={onOpenPartnerModal}
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-[#143A22] hover:bg-[#1d4f30] active:scale-95 transition-all shadow-sm cursor-pointer"
             >
-              Partner with us
+              {t('navPartner')}
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center">
+          {/* Mobile Right Controls: Language + Hamburger */}
+          <div className="flex md:hidden items-center gap-2">
+            <button
+              onClick={toggleLanguage}
+              className="px-2.5 py-1 rounded-full text-[11px] font-bold border border-black/10 bg-white text-[#143A22] flex items-center gap-1"
+            >
+              <Globe size={11} className="text-[#E25822]" />
+              <span>{language.toUpperCase()}</span>
+            </button>
+
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-[#143A22] hover:bg-black/5 transition-colors focus:outline-hidden cursor-pointer"
@@ -100,7 +123,7 @@ export default function Navbar({ onOpenPartnerModal }) {
               const active = isActive(link.path);
               return (
                 <Link
-                  key={link.name}
+                  key={link.path}
                   to={link.path}
                   onClick={() => {
                     setMobileMenuOpen(false);
@@ -125,11 +148,10 @@ export default function Navbar({ onOpenPartnerModal }) {
             }}
             className="w-full mt-2 py-3 rounded-full text-sm font-semibold text-white bg-[#143A22] hover:bg-[#1d4f30] transition-colors shadow-sm cursor-pointer"
           >
-            Partner with us
+            {t('navPartner')}
           </button>
         </div>
       )}
     </header>
   );
 }
-

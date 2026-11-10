@@ -17,7 +17,7 @@ export default function ToolsSection() {
       num: '02',
       title: 'Mission Cards',
       unitCost: 'Curriculum Kit',
-      desc: 'Bite-size, hands-on, week-by-week actions. Guides children through planting, care, soil layering, and screen-free Analog AI plant health decision trees.',
+      desc: 'Bite-size, hands-on, week-by-week actions. Guides children through planting, care, soil layering, and the Plant Doctor diagnostic guides.',
       imageSrc: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80',
       badge: 'Learning Toolkit',
       uploadNote: 'Photo: Mission cards / logbooks',

@@ -17,8 +17,8 @@ export default function KitShowcase() {
     {
       name: 'Mission Cards & Logbook',
       tag: 'SCREEN-FREE PLAYBOOK',
-      desc: '28 illustrated daily missions connecting biology, math, and water metrics. Includes the screen-free Analog AI plant health decision tree flowchart.',
-      features: ['Screen-free Analog AI decision tree', 'Age-differentiated checklists', 'Growth & moisture tracking'],
+      desc: '28 illustrated daily missions connecting biology, math, and water metrics. Includes the Plant Doctor diagnostic guide for organic remedies.',
+      features: ['Plant Doctor diagnostic guide', 'Age-differentiated checklists', 'Growth & moisture tracking'],
       imageSrc: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80',
       badge: 'Mission Playbook',
       uploadNote: 'Photo: Mission cards in class',
