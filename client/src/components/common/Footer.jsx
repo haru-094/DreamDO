@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function Footer({ onOpenPartnerModal }) {
+  const { t, language } = useLanguage();
+  const isRw = language === 'rw';
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -26,33 +30,38 @@ export default function Footer({ onOpenPartnerModal }) {
             </Link>
 
             <p className="text-sm text-white/60 max-w-sm leading-relaxed">
-              Equipping children with practical life skills, entrepreneurial thinking, and personal responsibility through hands-on learning.
+              {t('footerTagline')}
             </p>
 
             <div className="pt-2 text-xs text-white/40 font-mono">
-              © {new Date().getFullYear()} DreamDo Africa. All rights reserved.
+              © {new Date().getFullYear()} DreamDo Africa. {t('footerRights')}
             </div>
           </div>
 
           {/* Center Links */}
           <div className="md:col-span-3 space-y-3">
             <div className="text-xs font-bold uppercase tracking-wider text-[#C0F038]">
-              Navigation
+              {isRw ? 'Aho Wasura' : 'Navigation'}
             </div>
             <ul className="space-y-2 text-sm text-white/70">
               <li>
                 <Link to="/" onClick={scrollToTop} className="hover:text-white transition-colors">
-                  Home (Website Concept)
+                  {t('navHome')}
                 </Link>
               </li>
               <li>
                 <Link to="/little-farmer" onClick={scrollToTop} className="hover:text-white transition-colors">
-                  Little Farmer Program
+                  {t('navLittleFarmer')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/sponsor" onClick={scrollToTop} className="hover:text-white transition-colors">
+                  {t('navSponsor')}
                 </Link>
               </li>
               <li>
                 <Link to="/about" onClick={scrollToTop} className="hover:text-white transition-colors">
-                  About DreamDo Africa
+                  {t('navAbout')}
                 </Link>
               </li>
             </ul>
@@ -61,7 +70,7 @@ export default function Footer({ onOpenPartnerModal }) {
           {/* Right Navigation & Socials */}
           <div className="md:col-span-4 flex flex-col md:items-end space-y-4">
             <div className="text-xs font-bold uppercase tracking-wider text-[#C0F038]">
-              Headquarters
+              {isRw ? 'Icyicaro Gikuru' : 'Headquarters'}
             </div>
             <div className="text-xs sm:text-sm text-white/80 md:text-right space-y-1">
               <div className="font-semibold text-white">Kigali, Rwanda</div>
@@ -74,7 +83,7 @@ export default function Footer({ onOpenPartnerModal }) {
                 onClick={onOpenPartnerModal}
                 className="px-4 py-2 rounded-full bg-white/10 hover:bg-[#C0F038] hover:text-[#143A22] font-semibold text-white transition-all cursor-pointer"
               >
-                Inquire / Partner
+                {t('navPartner')}
               </button>
             </div>
           </div>
@@ -85,4 +94,3 @@ export default function Footer({ onOpenPartnerModal }) {
     </footer>
   );
 }
-

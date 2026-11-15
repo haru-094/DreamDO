@@ -1,13 +1,19 @@
 import React from 'react';
 import ImagePlaceholder from '../common/ImagePlaceholder';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function ToolsSection() {
+  const { t, language } = useLanguage();
+  const isRw = language === 'rw';
+
   const tools = [
     {
       num: '01',
-      title: 'Cone Garden',
+      title: t('tool1Title'),
       unitCost: '40,000 RWF',
-      desc: 'A scalable vertical garden made from durable HDPE sheets. Engineered to last up to 20 years, producing food in < 1m² space where land is limited.',
+      desc: isRw
+        ? 'Ubusitani buhagaritse bukozwe mu mpapuro zikomeye za HDPE. Bwubakiwe kuramba kugeza ku myaka 20, buhingwamo ibiribwa ahantu hato cyane (< 1m²).'
+        : 'A scalable vertical garden made from durable HDPE sheets. Engineered to last up to 20 years, producing food in < 1m² space where land is limited.',
       imageSrc: '/images/school-cone-garden.jpg',
       isAuthentic: true,
       badge: 'HDPE Cone Garden',
@@ -15,29 +21,35 @@ export default function ToolsSection() {
     },
     {
       num: '02',
-      title: 'Mission Cards',
-      unitCost: 'Curriculum Kit',
-      desc: 'Bite-size, hands-on, week-by-week actions. Guides children through planting, care, soil layering, and the Plant Doctor diagnostic guides.',
+      title: t('tool2Title'),
+      unitCost: isRw ? 'Igitabo cy’Imirimo' : 'Curriculum Kit',
+      desc: isRw
+        ? 'Ibikorwa bifatika bya buri cyumweru biyobora abana mu gutera, kwita ku bimera, kubaka ifumbire, no gukoresha igitabo cyo gusuzuma ibihingwa.'
+        : 'Bite-size, hands-on, week-by-week actions. Guides children through planting, care, soil layering, and the Plant Doctor diagnostic guides.',
       imageSrc: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80',
-      badge: 'Learning Toolkit',
+      badge: isRw ? 'Ibikoresho by’Imyigire' : 'Learning Toolkit',
       uploadNote: 'Photo: Mission cards / logbooks',
     },
     {
       num: '03',
-      title: 'Saving Box',
+      title: t('tool3Title'),
       unitCost: '15,000 RWF',
-      desc: 'A physical wooden savings box that connects harvest and sales directly to saving. Teaches kids delayed gratification, budgeting, and reinvestment.',
+      desc: isRw
+        ? 'Isanduku y’igiti ifunze ifasha umwana guhuza umusaruro no kuzigama. Yigisha abana kwirinda gusesagura, gucunga ingengo y’imari, no kongera gushora.'
+        : 'A physical wooden savings box that connects harvest and sales directly to saving. Teaches kids delayed gratification, budgeting, and reinvestment.',
       imageSrc: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80',
-      badge: 'DreamDo Saving Box',
+      badge: isRw ? 'Isanduku ya DreamDo' : 'DreamDo Saving Box',
       uploadNote: 'Photo: Student Saving Box',
     },
     {
       num: '04',
-      title: 'Coaching & Training',
+      title: t('tool4Title'),
       unitCost: '100,000 RWF',
-      desc: 'Facilitators, teachers, and parents receive training and continuous mentorship to ensure gardens remain sustainable and productive year after year.',
+      desc: isRw
+        ? 'Abafashamyigire, abarimu, n’ababyeyi bahabwa amahugurwa n’ubufasha buhoraho kugira ngo ubusitani bukomeze gutanga umusaruro umwaka ku wundi.'
+        : 'Facilitators, teachers, and parents receive training and continuous mentorship to ensure gardens remain sustainable and productive year after year.',
       imageSrc: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80',
-      badge: 'Facilitator Coaching',
+      badge: isRw ? 'Amahugurwa' : 'Facilitator Coaching',
       uploadNote: 'Photo: Teacher & facilitator training',
     },
   ];
@@ -52,26 +64,27 @@ export default function ToolsSection() {
           <div className="lg:col-span-5 flex flex-col justify-start">
             <div className="mb-3">
               <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#C0F038] uppercase font-mono">
-                PRACTICAL TOOLS, SERIOUS IMPACT
+                {t('toolsTag')}
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-5">
-              A garden is just<br className="hidden sm:inline" />
-              the beginning.
+              {t('toolsHeading')}
             </h2>
 
             <p className="text-base sm:text-lg text-white/70 leading-relaxed font-normal mb-8 max-w-md">
-              A complete package of four tools transforms schoolyard growing into an enduring learning asset that serves cohorts for up to 20 years.
+              {t('toolsBody')}
             </p>
 
             {/* Quick highlight badge */}
             <div className="p-4 rounded-2xl bg-white/5 border border-white/10 max-w-sm space-y-1">
               <span className="text-xs font-bold text-[#C0F038] uppercase font-mono tracking-wider block">
-                Social Enterprise Model
+                {isRw ? 'Uburyo bwo Kwibeshaho' : 'Social Enterprise Model'}
               </span>
               <p className="text-xs text-white/80 leading-relaxed">
-                Gardens are designed to run with locally available inputs after installation, with produce sales covering running costs and children’s savings.
+                {isRw
+                  ? 'Ubusitani bwagenewe gukoresha ibikoresho biboneka hafi, umusaruro ukagurishwa kugira ngo wishyure ibikenerwa n’ubwizigame bw’abana.'
+                  : 'Gardens are designed to run with locally available inputs after installation, with produce sales covering running costs and children’s savings.'}
               </p>
             </div>
           </div>
@@ -98,7 +111,7 @@ export default function ToolsSection() {
 
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-mono font-semibold text-[#C0F038]">
-                      TOOL {item.num}
+                      {isRw ? `IGIKORESHO CYA ${item.num}` : `TOOL ${item.num}`}
                     </span>
                     <span className="text-xs font-mono bg-white/10 text-white/90 px-2 py-0.5 rounded-md">
                       {item.unitCost}
@@ -115,8 +128,8 @@ export default function ToolsSection() {
                 </div>
 
                 <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-white/40">
-                  <span>Durable Asset</span>
-                  <span className="text-[#C0F038]">Full Package Support</span>
+                  <span>{isRw ? 'Uburambe bw’Imyaka 20' : 'Durable Asset'}</span>
+                  <span className="text-[#C0F038]">{isRw ? 'Ubufasha Bwuzuye' : 'Full Package Support'}</span>
                 </div>
               </div>
             ))}

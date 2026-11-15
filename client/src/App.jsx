@@ -7,6 +7,7 @@ import PartnerModal from './components/common/PartnerModal';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import LittleFarmerPage from './pages/LittleFarmerPage';
+import SponsorPage from './pages/SponsorPage';
 
 export default function App() {
   const [partnerModalOpen, setPartnerModalOpen] = useState(false);
@@ -32,12 +33,16 @@ export default function App() {
                 element={<HomePage onOpenPartnerModal={handleOpenModal} />}
               />
               <Route
-                path="/about"
-                element={<AboutPage onOpenPartnerModal={handleOpenModal} />}
-              />
-              <Route
                 path="/little-farmer"
                 element={<LittleFarmerPage onOpenPartnerModal={handleOpenModal} />}
+              />
+              <Route
+                path="/sponsor"
+                element={<SponsorPage onOpenPartnerModal={handleOpenModal} />}
+              />
+              <Route
+                path="/about"
+                element={<AboutPage onOpenPartnerModal={handleOpenModal} />}
               />
               {/* Fallback catch-all */}
               <Route

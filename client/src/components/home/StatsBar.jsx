@@ -1,18 +1,21 @@
 import React from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function StatsBar() {
+  const { t } = useLanguage();
+
   const stats = [
     {
-      value: '6–14',
-      label: 'years old young makers',
+      value: t('stat1Val'),
+      label: t('stat1Label'),
     },
     {
-      value: '4',
-      label: 'practical learning weeks',
+      value: t('stat2Val'),
+      label: t('stat2Label'),
     },
     {
-      value: '20 yrs',
-      label: 'garden life with care',
+      value: t('stat3Val'),
+      label: t('stat3Label'),
     },
   ];
 
@@ -24,8 +27,7 @@ export default function StatsBar() {
           {/* Left Title */}
           <div className="md:col-span-5">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white leading-snug">
-              A whole food system,<br className="hidden sm:inline" />
-              in a schoolyard.
+              {t('statsHeading')}
             </h2>
           </div>
 
@@ -48,4 +50,3 @@ export default function StatsBar() {
     </section>
   );
 }
-

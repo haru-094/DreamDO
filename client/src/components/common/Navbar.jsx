@@ -20,6 +20,7 @@ export default function Navbar({ onOpenPartnerModal }) {
   const navLinks = [
     { name: t('navHome'), path: '/' },
     { name: t('navLittleFarmer'), path: '/little-farmer' },
+    { name: t('navSponsor'), path: '/sponsor' },
     { name: t('navAbout'), path: '/about' },
   ];
 

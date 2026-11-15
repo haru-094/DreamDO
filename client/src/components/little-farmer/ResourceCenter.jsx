@@ -14,8 +14,10 @@ export default function ResourceCenter({ onOpenPartnerModal }) {
       subtitle: isRw
         ? 'Gahunda y’ubusitani bw’umunara mu bice by’icyaro n’inkambi z’impunzi mu Rwanda'
         : 'Cone Gardens for Public Schools in Rural and Marginalized Communities',
-      type: 'PDF • 5 Pages',
-      topics: ['HDPE Cone 20-yr Specs', '4 Tools System', 'School Rollout Formula'],
+      type: isRw ? 'Inyandiko • Impapuro 5' : 'PDF • 5 Pages',
+      topics: isRw
+        ? ['Imiterere ya HDPE iramba imyaka 20', 'Uburyo bw’Ibikoresho 4', 'Gahunda yo gukwirakwiza mu mashuri']
+        : ['HDPE Cone 20-yr Specs', '4 Tools System', 'School Rollout Formula'],
       actionLabel: isRw ? 'Saba Inyandiko Yuzuye' : 'Request Full Concept Note',
     },
     {
@@ -25,8 +27,10 @@ export default function ResourceCenter({ onOpenPartnerModal }) {
       subtitle: isRw
         ? 'Ubushakashatsi n’icyiciro cy’igerageza mu Murenge wa Masaka, Kigali'
         : 'Child-centered social enterprise model and pilot benchmark in Masaka Sector, Kigali',
-      type: 'PDF • 5 Pages',
-      topics: ['Masaka Sector Pilot', 'Waste-to-Farm Engineering', 'Little Farmers Expo Day'],
+      type: isRw ? 'Inyandiko • Impapuro 5' : 'PDF • 5 Pages',
+      topics: isRw
+        ? ['Igerageza mu Murenge wa Masaka', 'Guhindura imyanda umurima', 'Umunsi Mukuru w’Isoko ry’Abana']
+        : ['Masaka Sector Pilot', 'Waste-to-Farm Engineering', 'Little Farmers Expo Day'],
       actionLabel: isRw ? 'Saba Inyandiko Yuzuye' : 'Request Full Concept Note',
     },
     {
@@ -36,8 +40,10 @@ export default function ResourceCenter({ onOpenPartnerModal }) {
       subtitle: isRw
         ? 'Uburyo bwo guhuza abana b’imyaka 10–14 nk’abajyanama b’abato (imyaka 6–9)'
         : 'Playbook for single facilitators running 10-child cohorts with Farm Mentors',
-      type: 'Playbook • Sample',
-      topics: ['Age-Differentiated Missions', 'Pest Diagnostics Guide', 'Ledger Accounting'],
+      type: isRw ? 'Imfashanyigisho • Icyitegererezo' : 'Playbook • Sample',
+      topics: isRw
+        ? ['Imirimo igendanye n’imyaka', 'Gusuzuma indwara z’ibihingwa', 'Ibaruramari mu gitabo cy’umutungo']
+        : ['Age-Differentiated Missions', 'Pest Diagnostics Guide', 'Ledger Accounting'],
       actionLabel: isRw ? 'Saba Icyitegererezo cy’Igitabo' : 'Request Playbook Sample',
     },
   ];
@@ -112,7 +118,7 @@ export default function ResourceCenter({ onOpenPartnerModal }) {
                   if (onOpenPartnerModal) {
                     onOpenPartnerModal({
                       type: 'community',
-                      message: `Request for document: ${doc.title}`,
+                      message: isRw ? `Ubusabe bw'inyandiko: ${doc.title}` : `Request for document: ${doc.title}`,
                     });
                   }
                 }}

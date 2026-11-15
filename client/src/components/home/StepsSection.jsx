@@ -1,48 +1,60 @@
 import React from 'react';
 import ImagePlaceholder from '../common/ImagePlaceholder';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function StepsSection() {
+  const { t, language } = useLanguage();
+  const isRw = language === 'rw';
+
   const steps = [
     {
       num: '01',
-      title: 'Understand',
-      desc: 'Meet the food system.',
+      title: t('step1Title'),
+      desc: t('step1Desc'),
       pillColor: 'bg-[#C0F038]',
       textColor: 'text-[#143A22]',
-      detail: 'Soil biology, seed embryology, sunlight, water conservation, and local crop nutrition.',
+      detail: isRw
+        ? 'Ubumenyi bw’ubutaka, imiterere y’imbuto, izuba, kubungabunga amazi, n’intungamubiri z’ibihingwa by’iwacu.'
+        : 'Soil biology, seed embryology, sunlight, water conservation, and local crop nutrition.',
       imageSrc: 'https://images.unsplash.com/photo-1592417817098-8f3d6ef23a41?auto=format&fit=crop&w=600&q=80',
       imageAlt: 'Young hands holding seed and soil during Week 1',
       uploadNote: 'Photo: Child testing soil / seeds',
     },
     {
       num: '02',
-      title: 'Grow',
-      desc: 'Plant, care and problem-solve.',
+      title: t('step2Title'),
+      desc: t('step2Desc'),
       pillColor: 'bg-[#C0F038]',
       textColor: 'text-[#143A22]',
-      detail: 'Establishing daily watering routines, building DIY drip irrigation, and natural garlic-chili spray.',
+      detail: isRw
+        ? 'Gushyiraho gahunda yo kuvomera buri munsi, kubaka uburyo bwo gutonyanga amazi, no gutegura imiti y’ifu y’itunguru n’urusenda.'
+        : 'Establishing daily watering routines, building DIY drip irrigation, and natural garlic-chili spray.',
       imageSrc: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80',
       imageAlt: 'Lush green seedlings growing in container gardens',
       uploadNote: 'Photo: Drip irrigation & plant care',
     },
     {
       num: '03',
-      title: 'Harvest',
-      desc: 'See effort become something real.',
+      title: t('step3Title'),
+      desc: t('step3Desc'),
       pillColor: 'bg-[#C0F038]',
       textColor: 'text-[#143A22]',
-      detail: 'Cutting fresh amaranth (dodo) and microgreens cleanly, batch weighing, and hygiene standards.',
+      detail: isRw
+        ? 'Gusarura neza imboga za dodo n’ibihumyo by’ibijumba, gupima ibiro, no kubahiriza isuku y’ibiribwa.'
+        : 'Cutting fresh amaranth (dodo) and microgreens cleanly, batch weighing, and hygiene standards.',
       imageSrc: 'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=600&q=80',
       imageAlt: 'Freshly harvested crops and mushrooms in student hands',
       uploadNote: 'Photo: Harvesting dodo / oyster mushrooms',
     },
     {
       num: '04',
-      title: 'Sell & save',
-      desc: "Price, earn and choose what's next.",
+      title: t('step4Title'),
+      desc: t('step4Desc'),
       pillColor: 'bg-[#E25822]',
       textColor: 'text-white',
-      detail: 'Calculating unit profit, hosting school Market Day, and depositing coins into the DreamDo Saving Box.',
+      detail: isRw
+        ? 'Kubara inyungu, gutegura umunsi w’isoko ku kigo cy’ishuri, no gushyira amafaranga mu Isanduku yo Kuzigama ya DreamDo.'
+        : 'Calculating unit profit, hosting school Market Day, and depositing coins into the DreamDo Saving Box.',
       imageSrc: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80',
       imageAlt: 'Coins and savings ledger for DreamDo Bank deposit',
       uploadNote: 'Photo: Child with Saving Box & coins',
@@ -57,16 +69,16 @@ export default function StepsSection() {
         <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="mb-3">
             <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#E25822] uppercase font-mono">
-              LEARNING BY DOING
+              {t('stepsTag')}
             </span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#143A22] leading-tight mb-4">
-            From seed to self-belief.
+            {t('stepsHeading')}
           </h2>
 
           <p className="text-base sm:text-lg text-[#556358] font-normal leading-relaxed">
-            The learning journey: Understand → Grow → Harvest → Consume / Sell → Earn → Save → Reinvest. Every step connects practical agriculture with real financial agency.
+            {t('stepsSubtitle')}
           </p>
         </div>
 
@@ -83,7 +95,7 @@ export default function StepsSection() {
                   <ImagePlaceholder
                     src={step.imageSrc}
                     alt={step.imageAlt}
-                    badge={`Step ${step.num}`}
+                    badge={`${isRw ? 'Intambwe' : 'Step'} ${step.num}`}
                     aspectRatio="aspect-[4/3]"
                     uploadNote={step.uploadNote}
                     className="rounded-2xl"
@@ -111,8 +123,8 @@ export default function StepsSection() {
               </div>
 
               <div className="pt-3 border-t border-black/5 flex items-center justify-between text-[11px] text-[#829286] font-mono">
-                <span>Phase {step.num} of 04</span>
-                <span className="text-[#143A22] font-semibold">Active Cycle</span>
+                <span>{isRw ? `Icyiciro cya ${step.num} kuri 04` : `Phase ${step.num} of 04`}</span>
+                <span className="text-[#143A22] font-semibold">{isRw ? 'Imyigire Ngiro' : 'Active Cycle'}</span>
               </div>
             </div>
           ))}

@@ -1,31 +1,41 @@
 import React, { useState } from 'react';
 import { Sprout, Coins, Calendar, TrendingUp, Sparkles } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function CropCalculator() {
+  const { language } = useLanguage();
+  const isRw = language === 'rw';
+
   const [cropType, setCropType] = useState('microgreens');
   const [studentsCount, setStudentsCount] = useState(15);
 
   const cropData = {
     microgreens: {
-      name: 'Sunflower Microgreens',
+      name: isRw ? 'Imboga z’Ubuki n’Imbuto (Microgreens)' : 'Sunflower Microgreens',
       days: 10,
       yieldPerStudent: 0.8, // kg
       pricePerKg: 4000, // RWF
-      description: 'Superfast turnaround — perfect for showing kids rapid results.',
+      description: isRw
+        ? 'Imboga zikura mu minsi 10 gusa — bituma abana babona ibisubizo byihuse by’umwete wabo.'
+        : 'Superfast turnaround — perfect for showing kids rapid results.',
     },
     mushrooms: {
-      name: 'Oyster Mushrooms',
+      name: isRw ? 'Ibihumyo by’Ibijumba (Oyster Mushrooms)' : 'Oyster Mushrooms',
       days: 18,
       yieldPerStudent: 1.5, // kg
       pricePerKg: 3500, // RWF
-      description: 'Grown on recycled organic substrate bags in dark humid corners.',
+      description: isRw
+        ? 'Biyezwa mu mifuka ikozwe mu bisigazwa by’ibihingwa mu mfuruka zikonje z’ikigo cy’ishuri.'
+        : 'Grown on recycled organic substrate bags in dark humid corners.',
     },
     veggies: {
-      name: 'Crisp Lettuce & Greens',
+      name: isRw ? 'Imboga za Dodo, Salade & Epinari' : 'Crisp Lettuce & Greens',
       days: 28,
       yieldPerStudent: 2.0, // kg
       pricePerKg: 2000, // RWF
-      description: 'Classic vertical cone garden crops supplying school lunches and homes.',
+      description: isRw
+        ? 'Ibihingwa bisanzwe by’ubusitani bw’umunara bifasha mu biribwa by’ikigo no mu miryango.'
+        : 'Classic vertical cone garden crops supplying school lunches and homes.',
     },
   };
 
@@ -43,13 +53,17 @@ export default function CropCalculator() {
           <div className="max-w-2xl mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#143A22]/5 text-[#143A22] text-xs font-semibold mb-3">
               <Sparkles size={13} className="text-[#E25822]" />
-              Interactive Impact Calculator
+              {isRw ? 'Ikibalisho cy’Umusaruro n’Ubwizigame' : 'Interactive Impact Calculator'}
             </div>
             <h3 className="text-2xl sm:text-3xl font-extrabold text-[#143A22] tracking-tight">
-              See the harvest-to-savings formula in action.
+              {isRw
+                ? 'Reba uko urugendo rwo guhinga ruhinduka ubwizigame.'
+                : 'See the harvest-to-savings formula in action.'}
             </h3>
             <p className="text-sm sm:text-base text-[#556358] mt-2">
-              Calculate how a single 4-week cohort turns seeds, daily care, and market day sales into real savings in the DreamDo Bank.
+              {isRw
+                ? 'Bara uko icyiciro cy’ibyumweru 4 gihindura imbuto, kuvomera buri munsi, n’ubugurisha bwo ku munsi w’isoko amafaranga nyayo yo kuzigama muri Banki ya DreamDo.'
+                : 'Calculate how a single 4-week cohort turns seeds, daily care, and market day sales into real savings in the DreamDo Bank.'}
             </p>
           </div>
 
@@ -60,14 +74,14 @@ export default function CropCalculator() {
               
               {/* Crop Choice */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#68766C] mb-2">
-                  Choose Crop
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#68766C] mb-2 font-mono">
+                  {isRw ? 'Hitamo Igihingwa' : 'Choose Crop'}
                 </label>
                 <div className="grid grid-cols-3 gap-2 sm:gap-3">
                   {[
-                    { id: 'microgreens', label: 'Microgreens', icon: '🌱' },
-                    { id: 'mushrooms', label: 'Mushrooms', icon: '🍄' },
-                    { id: 'veggies', label: 'Cone Greens', icon: '🥬' },
+                    { id: 'microgreens', label: isRw ? 'Imboga Nto' : 'Microgreens', icon: '🌱' },
+                    { id: 'mushrooms', label: isRw ? 'Ibihumyo' : 'Mushrooms', icon: '🍄' },
+                    { id: 'veggies', label: isRw ? 'Imboga z’Umunara' : 'Cone Greens', icon: '🥬' },
                   ].map((btn) => (
                     <button
                       key={btn.id}
@@ -91,11 +105,11 @@ export default function CropCalculator() {
               {/* Number of Learners Slider */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-[#68766C]">
-                    Cohort Size (Students)
+                  <label className="text-xs font-bold uppercase tracking-wider text-[#68766C] font-mono">
+                    {isRw ? 'Umubare w’Abanyeshuri mu Itsinda' : 'Cohort Size (Students)'}
                   </label>
-                  <span className="text-base font-bold text-[#143A22] bg-[#FAF8F5] px-3 py-1 rounded-md border border-black/5">
-                    {studentsCount} students
+                  <span className="text-base font-bold text-[#143A22] bg-[#FAF8F5] px-3 py-1 rounded-md border border-black/5 font-mono">
+                    {studentsCount} {isRw ? 'abana' : 'students'}
                   </span>
                 </div>
                 <input
@@ -108,9 +122,9 @@ export default function CropCalculator() {
                   className="w-full h-2 bg-black/10 rounded-lg appearance-none cursor-pointer accent-[#143A22]"
                 />
                 <div className="flex justify-between text-[11px] text-[#839187] mt-1 font-mono">
-                  <span>5 (Single club)</span>
-                  <span>30 (Full class)</span>
-                  <span>60 (Grade cohort)</span>
+                  <span>5 ({isRw ? 'itsinda rito' : 'Single club'})</span>
+                  <span>30 ({isRw ? 'ishuri ryose' : 'Full class'})</span>
+                  <span>60 ({isRw ? 'urungano rwose' : 'Grade cohort'})</span>
                 </div>
               </div>
 
@@ -118,55 +132,55 @@ export default function CropCalculator() {
 
             {/* Results Card */}
             <div className="lg:col-span-6 bg-[#F4F0E6] rounded-2xl p-6 sm:p-8 border border-black/5">
-              <div className="text-xs font-bold uppercase tracking-wider text-[#E25822] mb-4">
-                Estimated Cycle Outcomes
+              <div className="text-xs font-bold uppercase tracking-wider text-[#E25822] mb-4 font-mono">
+                {isRw ? 'Ibyitezwe mu Musaruro w’Itsinda' : 'Estimated Cycle Outcomes'}
               </div>
 
               <div className="grid grid-cols-2 gap-4 sm:gap-6 mb-6">
                 <div className="bg-white/90 p-4 rounded-xl shadow-2xs">
                   <div className="flex items-center gap-1.5 text-xs text-[#68766C] mb-1">
                     <Calendar size={14} className="text-[#143A22]" />
-                    <span>Days to Harvest</span>
+                    <span>{isRw ? 'Iminsi yo Gusarura' : 'Days to Harvest'}</span>
                   </div>
-                  <div className="text-2xl font-extrabold text-[#143A22]">
-                    {selected.days} <span className="text-xs font-normal text-[#68766C]">days</span>
+                  <div className="text-2xl font-extrabold text-[#143A22] font-mono">
+                    {selected.days} <span className="text-xs font-normal text-[#68766C] font-sans">{isRw ? 'iminsi' : 'days'}</span>
                   </div>
                 </div>
 
                 <div className="bg-white/90 p-4 rounded-xl shadow-2xs">
                   <div className="flex items-center gap-1.5 text-xs text-[#68766C] mb-1">
                     <Sprout size={14} className="text-[#143A22]" />
-                    <span>Total Harvest</span>
+                    <span>{isRw ? 'Umusaruro Wose' : 'Total Harvest'}</span>
                   </div>
-                  <div className="text-2xl font-extrabold text-[#143A22]">
-                    {totalHarvestKg} <span className="text-xs font-normal text-[#68766C]">kg produce</span>
+                  <div className="text-2xl font-extrabold text-[#143A22] font-mono">
+                    {totalHarvestKg} <span className="text-xs font-normal text-[#68766C] font-sans">kg</span>
                   </div>
                 </div>
 
                 <div className="bg-white/90 p-4 rounded-xl shadow-2xs">
                   <div className="flex items-center gap-1.5 text-xs text-[#68766C] mb-1">
                     <Coins size={14} className="text-[#E25822]" />
-                    <span>Cohort Revenue</span>
+                    <span>{isRw ? 'Ayinjiye ku Isoko' : 'Cohort Revenue'}</span>
                   </div>
-                  <div className="text-2xl font-extrabold text-[#143A22]">
-                    {totalEarningsRwf.toLocaleString()} <span className="text-xs font-normal text-[#68766C]">RWF</span>
+                  <div className="text-2xl font-extrabold text-[#143A22] font-mono">
+                    {totalEarningsRwf.toLocaleString()} <span className="text-xs font-normal text-[#68766C] font-sans">RWF</span>
                   </div>
                 </div>
 
                 <div className="bg-white/90 p-4 rounded-xl shadow-2xs">
                   <div className="flex items-center gap-1.5 text-xs text-[#68766C] mb-1">
                     <TrendingUp size={14} className="text-[#143A22]" />
-                    <span>Per Student Bank</span>
+                    <span>{isRw ? 'Buri Mwana Azigama' : 'Per Student Bank'}</span>
                   </div>
-                  <div className="text-2xl font-extrabold text-[#143A22]">
-                    {perStudentSavings.toLocaleString()} <span className="text-xs font-normal text-[#68766C]">RWF</span>
+                  <div className="text-2xl font-extrabold text-[#143A22] font-mono">
+                    {perStudentSavings.toLocaleString()} <span className="text-xs font-normal text-[#68766C] font-sans">RWF</span>
                   </div>
                 </div>
               </div>
 
               <div className="flex items-center justify-between text-xs text-[#5D6B60] pt-2 border-t border-black/5">
-                <span>Earned through student effort, care, & market trade.</span>
-                <span className="font-semibold text-[#143A22]">100% Merit-based</span>
+                <span>{isRw ? 'Bibonwa binyuze mu mwete, kwita ku bihingwa, no gucuruza.' : 'Earned through student effort, care, & market trade.'}</span>
+                <span className="font-semibold text-[#143A22]">{isRw ? '100% Umwete Nyabyo' : '100% Merit-based'}</span>
               </div>
             </div>
 
@@ -178,4 +192,3 @@ export default function CropCalculator() {
     </section>
   );
 }
-

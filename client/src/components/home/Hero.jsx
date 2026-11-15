@@ -3,9 +3,11 @@ import { ArrowUpRight, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import HeroIllustration from './HeroIllustration';
 import ImagePlaceholder from '../common/ImagePlaceholder';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function Hero({ onOpenPartnerModal }) {
   const [viewMode, setViewMode] = useState('illustration'); // 'illustration' or 'real'
+  const { t, language } = useLanguage();
 
   return (
     <section id="hero" className="relative pt-28 sm:pt-36 pb-16 sm:pb-24 overflow-hidden bg-[#FAF8F5]">
@@ -17,23 +19,23 @@ export default function Hero({ onOpenPartnerModal }) {
             {/* Tag / Kicker */}
             <div className="inline-flex items-center gap-2 mb-6">
               <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#6A786E] uppercase font-mono">
-                DREAMDO RWANDA / LITTLE FARMER
+                {t('heroTag')}
               </span>
               <span className="text-black/20">•</span>
               <span className="text-[11px] font-semibold text-[#143A22] bg-[#BAF035]/50 px-2 py-0.5 rounded-full">
-                Masaka Sector Pilot
+                {t('heroPilot')}
               </span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-[#143A22] leading-[1.08] mb-6">
-              Little hands.<br />
-              Big harvests.
+              {t('heroTitle1')}<br />
+              {t('heroTitle2')}
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl text-[#465349] max-w-xl font-normal leading-relaxed mb-8">
-              A hands-on food and money journey for the next generation — from the first seed to a first sale. Transforming Rwandan children from passive consumers into active growers and savers.
+              {t('heroSubtitle')}
             </p>
 
             {/* CTAs */}
@@ -42,14 +44,14 @@ export default function Hero({ onOpenPartnerModal }) {
                 onClick={onOpenPartnerModal}
                 className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 rounded-full text-sm font-semibold text-white bg-[#143A22] hover:bg-[#1d4f30] active:scale-98 transition-all shadow-sm hover:shadow-md cursor-pointer"
               >
-                Bring Little Farmer to your school
+                {t('heroCtaPrimary')}
               </button>
 
               <Link
                 to="/little-farmer"
                 className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-[#143A22] hover:text-[#E25822] transition-colors py-2 group cursor-pointer"
               >
-                <span>Explore the Little Farmer program</span>
+                <span>{t('heroCtaSecondary')}</span>
                 <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
             </div>
@@ -57,7 +59,7 @@ export default function Hero({ onOpenPartnerModal }) {
             {/* Footnote / Micro tag */}
             <div className="pt-2 flex items-center gap-3">
               <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.18em] text-[#86968B] uppercase font-mono">
-                BUILT FOR RWANDA • SCALED FOR IMPACT
+                {t('heroFootnote')}
               </span>
             </div>
           </div>
@@ -75,7 +77,7 @@ export default function Hero({ onOpenPartnerModal }) {
                     : 'text-[#5C6A60] hover:text-[#143A22]'
                 }`}
               >
-                Figma Concept
+                {t('heroToggleConcept')}
               </button>
               <button
                 onClick={() => setViewMode('real')}
@@ -86,7 +88,7 @@ export default function Hero({ onOpenPartnerModal }) {
                 }`}
               >
                 <Camera size={13} />
-                <span>Field Photo</span>
+                <span>{t('heroTogglePhoto')}</span>
               </button>
             </div>
 
@@ -99,15 +101,17 @@ export default function Hero({ onOpenPartnerModal }) {
                   <ImagePlaceholder
                     src="/images/school-cone-garden.jpg"
                     alt="Rwandan children gathered around an HDPE Cone Garden at school"
-                    caption="Children at a school cone garden in Rwanda — learning food production firsthand."
-                    badge="Authentic Field Photo"
+                    caption={t('heroPhotoCaption')}
+                    badge={language === 'rw' ? 'Ifoto Nyakuri' : 'Authentic Field Photo'}
                     isAuthentic={true}
                     aspectRatio="aspect-[4/3]"
-                    uploadNote="Photo from Concept Note Page 1"
+                    uploadNote="Photo: Concept Note Page 1"
                   />
                   <div className="text-center mt-2.5">
                     <span className="text-[11px] text-[#718075] italic">
-                      Durable HDPE Cone Garden in action with school cohort, Kigali
+                      {language === 'rw'
+                        ? 'Ubusitani bw’umunara wa HDPE mu kigo cy’ishuri, Kigali'
+                        : 'Durable HDPE Cone Garden in action with school cohort, Kigali'}
                     </span>
                   </div>
                 </div>

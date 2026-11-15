@@ -1,36 +1,48 @@
 import React from 'react';
 import ImagePlaceholder from '../common/ImagePlaceholder';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function FieldGallery() {
+  const { language } = useLanguage();
+  const isRw = language === 'rw';
+
   const galleryItems = [
     {
-      title: 'Waste-to-Farm Engineering',
-      desc: 'Children convert plastic bottles, sacks, and jerrycans into productive growing containers with proper drainage and compost layering.',
+      title: isRw ? 'Guhindura Imyanda Umurima' : 'Waste-to-Farm Engineering',
+      desc: isRw
+        ? 'Abana bahindura amacupa ya pulasitiki, imifuka, n’amajerekani imirima itanga umusaruro ifite uburyo bwo kumeneka amazi n’ifumbire y’imborera.'
+        : 'Children convert plastic bottles, sacks, and jerrycans into productive growing containers with proper drainage and compost layering.',
       imageSrc: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80',
-      badge: 'Waste-to-Farm',
-      uploadNote: 'Photo: Sacks & bottle gardens',
+      badge: isRw ? 'Imyanda Ihinduka Umurima' : 'Waste-to-Farm',
+      uploadNote: isRw ? 'Ifoto: Ubusitani bw’imifuka n’amacupa' : 'Photo: Sacks & bottle gardens',
     },
     {
-      title: 'School HDPE Cone Gardens',
-      desc: 'Our durable vertical gardens in public schools across Kigali and rural districts, built to last up to 20 years with light maintenance.',
+      title: isRw ? 'Ubusitani bw’Umunara mu Mashuri (HDPE)' : 'School HDPE Cone Gardens',
+      desc: isRw
+        ? 'Ubusitani buhagaritse buramba mu mashuri ya leta i Kigali no mu turere tw’icyaro, bwubakiwe kuramba kugeza ku myaka 20 bukabungabungwa byoroshye.'
+        : 'Our durable vertical gardens in public schools across Kigali and rural districts, built to last up to 20 years with light maintenance.',
       imageSrc: '/images/school-cone-garden.jpg',
       isAuthentic: true,
-      badge: 'Cone Garden Deployment',
-      uploadNote: 'Photo: School Cone Garden',
+      badge: isRw ? 'Ubusitani bw’Ishuri' : 'Cone Garden Deployment',
+      uploadNote: isRw ? 'Ifoto: Ubusitani bw’Umunara ku Ishuri' : 'Photo: School Cone Garden',
     },
     {
-      title: 'Smart Care & The Plant Doctor',
-      desc: 'Children learn resource-efficient drip irrigation, pest troubleshooting, and make natural garlic-chili sprays for plant health.',
+      title: isRw ? 'Kwitaho & Muganga w’Ibihingwa' : 'Smart Care & The Plant Doctor',
+      desc: isRw
+        ? 'Abana biga kuvomera mu gutonyanga hakoreshejwe amazi make, gusuzuma ibyonnyi, no gukora imiti y’umwimerere y’itunguru ry’umweru n’urusenda.'
+        : 'Children learn resource-efficient drip irrigation, pest troubleshooting, and make natural garlic-chili sprays for plant health.',
       imageSrc: 'https://images.unsplash.com/photo-1592417817098-8f3d6ef23a41?auto=format&fit=crop&w=800&q=80',
-      badge: 'The Plant Doctor',
-      uploadNote: 'Photo: Drip irrigation & inspection',
+      badge: isRw ? 'Muganga w’Ibihingwa' : 'The Plant Doctor',
+      uploadNote: isRw ? 'Ifoto: Kuvomera no gusuzuma ibihingwa' : 'Photo: Drip irrigation & inspection',
     },
     {
-      title: 'Market Day & Expo Day',
-      desc: 'At the end of every cycle, young farmers showcase produce, pitch their learning journals, and deposit real earnings into the DreamDo Bank.',
+      title: isRw ? 'Umunsi w’Isoko & Kumurika Umusaruro' : 'Market Day & Expo Day',
+      desc: isRw
+        ? 'Ku mpera za buri gipimo, abahinzi bakiri bato bamurika umusaruro, bagasobanura ibitabo byabo by’umutungo, bakabitsa inyungu nyazo muri Banki ya DreamDo.'
+        : 'At the end of every cycle, young farmers showcase produce, pitch their learning journals, and deposit real earnings into the DreamDo Bank.',
       imageSrc: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80',
-      badge: 'Little Farmers Expo Day',
-      uploadNote: 'Photo: Market Day transactions',
+      badge: isRw ? 'Umunsi Mukuru w’Isoko' : 'Little Farmers Expo Day',
+      uploadNote: isRw ? 'Ifoto: Ubugurisha ku Munsi w’Isoko' : 'Photo: Market Day transactions',
     },
   ];
 
@@ -40,13 +52,17 @@ export default function FieldGallery() {
         
         <div className="max-w-3xl mb-14">
           <span className="text-[11px] font-bold tracking-[0.2em] text-[#E25822] uppercase font-mono mb-2 block">
-            VISUAL DISPATCHES FROM RWANDA
+            {isRw ? 'AMAFOTO NYAYO YO MU MIRIMA MU RWANDA' : 'VISUAL DISPATCHES FROM RWANDA'}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#143A22] tracking-tight mb-4">
-            Little Farmer in action across schools and communities.
+            {isRw
+              ? 'Umuhinzi Muto mu bikorwa mu mashuri no mu miryango.'
+              : 'Little Farmer in action across schools and communities.'}
           </h2>
           <p className="text-base sm:text-lg text-[#556358] leading-relaxed">
-            Real children, real soil, and real transactions. See how our four pillars transform everyday schoolyards into thriving learning hubs.
+            {isRw
+              ? 'Abana nyabo, ubutaka nyabwo, n’ubugurisha nyabwo. Reba uko inkingi zacu enye zihindura ibibuga by’ishuri ahantu ho kwigira heza.'
+              : 'Real children, real soil, and real transactions. See how our four pillars transform everyday schoolyards into thriving learning hubs.'}
           </p>
         </div>
 
@@ -81,4 +97,3 @@ export default function FieldGallery() {
     </section>
   );
 }
-

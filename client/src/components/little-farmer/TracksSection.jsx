@@ -1,28 +1,38 @@
 import React from 'react';
 import { School, Home, Globe2, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../../context/LanguageContext';
 
 export default function TracksSection({ onOpenPartnerModal }) {
+  const { language } = useLanguage();
+  const isRw = language === 'rw';
+
   const tracks = [
     {
       icon: School,
-      title: 'For Schools & Academies',
-      kicker: 'CAMPUS PROGRAM',
-      desc: 'Seamlessly embeds into science, mathematics, and extracurricular club time. Comes with teacher facilitator training and school market day setup.',
-      highlight: 'Turn inactive school grounds into living classrooms.',
+      title: isRw ? 'Ku Mashuri n’Ibigo by’Uburezi' : 'For Schools & Academies',
+      kicker: isRw ? 'GAHUNDA Y’IKIGO CY’ISHURI' : 'CAMPUS PROGRAM',
+      desc: isRw
+        ? 'Ihuza neza n’amasomo ya siyansi, imibare, n’amasaha y’amatsinda y’abanyeshuri (clubs). Izana n’amahugurwa y’abarimu no gutegura isoko ry’ikigo.'
+        : 'Seamlessly embeds into science, mathematics, and extracurricular club time. Comes with teacher facilitator training and school market day setup.',
+      highlight: isRw ? 'Hindura ubusitani bw’ikigo amashuri nyakuri y’ubuzima.' : 'Turn inactive school grounds into living classrooms.',
     },
     {
       icon: Home,
-      title: 'For Families & Homes',
-      kicker: 'HOUSEHOLD COACHING',
-      desc: 'A home coaching model where a DreamDo coach visits weekly to guide parents and children through growing food on balconies and tracking savings.',
-      highlight: 'Cultivate teamwork, chores, and financial habits at home.',
+      title: isRw ? 'Ku Miryango n’Ingo' : 'For Families & Homes',
+      kicker: isRw ? 'UBUFASHA MU RUGO' : 'HOUSEHOLD COACHING',
+      desc: isRw
+        ? 'Umufashamyigire wa DreamDo asura urugo buri cyumweru akereka ababyeyi n’abana uko bahinga imboga ku mabaraza no gukurikirana ubwizigame.'
+        : 'A home coaching model where a DreamDo coach visits weekly to guide parents and children through growing food on balconies and tracking savings.',
+      highlight: isRw ? 'Kuza ubufatanye, imirimo yo mu rugo, n’ingeso yo kuzigama.' : 'Cultivate teamwork, chores, and financial habits at home.',
     },
     {
       icon: Globe2,
-      title: 'For Communities & NGOs',
-      kicker: 'SOCIAL IMPACT',
-      desc: 'Subsidized community hubs empowering vulnerable, rural, and refugee youth with high-yield food security, nutrition, and income-generating skills.',
-      highlight: 'Scalable community greenhouses for youth resilience.',
+      title: isRw ? 'Ku Miryango itari iya Leta & Sosiyete Sivile' : 'For Communities & NGOs',
+      kicker: isRw ? 'IMPINDUKA MU MURYANGO' : 'SOCIAL IMPACT',
+      desc: isRw
+        ? 'Gushinga ubusitani bufasha urubyiruko rwo mu nkambi z’impunzi n’imiryango ikennye kugira umutekano w’ibiribwa, intungamubiri, n’uburyo bwo kwinjiza amafaranga.'
+        : 'Subsidized community hubs empowering vulnerable, rural, and refugee youth with high-yield food security, nutrition, and income-generating skills.',
+      highlight: isRw ? 'Ubusitani bwagutse bwo guhangana n’ubukene n’imihindagurikire y’ikirere.' : 'Scalable community greenhouses for youth resilience.',
     },
   ];
 
@@ -32,10 +42,12 @@ export default function TracksSection({ onOpenPartnerModal }) {
         
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-[11px] font-bold tracking-[0.2em] text-[#E25822] uppercase font-mono mb-2 block">
-            HOW TO PARTICIPATE
+            {isRw ? 'UBURYO BWO KWITABIRA' : 'HOW TO PARTICIPATE'}
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#143A22] tracking-tight">
-            Three tailored ways to bring Little Farmer to life.
+            {isRw
+              ? 'Uburyo butatu bwo kwinjira muri gahunda y’Umuhinzi Muto.'
+              : 'Three tailored ways to bring Little Farmer to life.'}
           </h2>
         </div>
 
@@ -70,7 +82,7 @@ export default function TracksSection({ onOpenPartnerModal }) {
                     onClick={onOpenPartnerModal}
                     className="w-full py-2.5 rounded-full text-xs font-bold text-[#143A22] bg-[#FAF8F5] hover:bg-[#143A22] hover:text-white transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                   >
-                    <span>Inquire for this track</span>
+                    <span>{isRw ? 'Saba ibisobanuro kuri iki' : 'Inquire for this track'}</span>
                     <ArrowRight size={13} />
                   </button>
                 </div>
@@ -83,4 +95,3 @@ export default function TracksSection({ onOpenPartnerModal }) {
     </section>
   );
 }
-

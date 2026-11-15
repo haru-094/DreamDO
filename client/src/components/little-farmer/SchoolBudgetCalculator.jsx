@@ -328,20 +328,20 @@ Total Investment: ${grandTotalRwf.toLocaleString()} RWF (~$${grandTotalUsd.toLoc
                 {/* Line Item Breakdown */}
                 <div className="bg-white/5 rounded-2xl p-4 border border-white/10 space-y-2 text-xs font-mono">
                   <div className="flex justify-between text-white/70">
-                    <span>{cones} × Cone Gardens</span>
+                    <span>{cones} × {isRw ? 'Ubusitani bw’Umunara' : 'Cone Gardens'}</span>
                     <span>{totalCones.toLocaleString()} RWF</span>
                   </div>
                   <div className="flex justify-between text-white/70">
-                    <span>{boxes} × Saving Boxes</span>
+                    <span>{boxes} × {isRw ? 'Amasanduku yo Kuzigama' : 'Saving Boxes'}</span>
                     <span>{totalBoxes.toLocaleString()} RWF</span>
                   </div>
                   <div className="flex justify-between text-white/70">
-                    <span>{trainings} × Teacher Trainings</span>
+                    <span>{trainings} × {isRw ? 'Amahugurwa y’Abarimu' : 'Teacher Trainings'}</span>
                     <span>{totalTrainings.toLocaleString()} RWF</span>
                   </div>
                   {marketDays > 0 && (
                     <div className="flex justify-between text-white/70">
-                      <span>{marketDays} × Campus Market Day</span>
+                      <span>{marketDays} × {isRw ? 'Iminsi y’Isoko ry’Ishuri' : 'Campus Market Day'}</span>
                       <span>{totalMarketDays.toLocaleString()} RWF</span>
                     </div>
                   )}
@@ -372,3 +372,4 @@ Total Investment: ${grandTotalRwf.toLocaleString()} RWF (~$${grandTotalUsd.toLoc
     </section>
   );
 }
+
