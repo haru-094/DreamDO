@@ -1,6 +1,7 @@
 import React from 'react';
 import ImagePlaceholder from '../common/ImagePlaceholder';
 import { useLanguage } from '../../context/LanguageContext';
+import { Sparkles, Compass, Shield, BookOpen, Layers } from 'lucide-react';
 
 export default function ToolsSection() {
   const { t, language } = useLanguage();
@@ -10,33 +11,30 @@ export default function ToolsSection() {
     {
       num: '01',
       title: t('tool1Title'),
-      unitCost: '40,000 RWF',
-      desc: isRw
-        ? 'Ubusitani buhagaritse bukozwe mu mpapuro zikomeye za HDPE. Bwubakiwe kuramba kugeza ku myaka 20, buhingwamo ibiribwa ahantu hato cyane (< 1m²).'
-        : 'A scalable vertical garden made from durable HDPE sheets. Engineered to last up to 20 years, producing food in < 1m² space where land is limited.',
+      role: t('tool1Role'),
+      desc: t('tool1Desc'),
+      icon: Layers,
       imageSrc: '/images/school-cone-garden.jpg',
       isAuthentic: true,
-      badge: 'HDPE Cone Garden',
+      badge: isRw ? 'Ubusitani bw’Umunara' : 'Vertical Cone Garden',
       uploadNote: 'Photo: School Cone Garden',
     },
     {
       num: '02',
       title: t('tool2Title'),
-      unitCost: isRw ? 'Igitabo cy’Imirimo' : 'Curriculum Kit',
-      desc: isRw
-        ? 'Ibikorwa bifatika bya buri cyumweru biyobora abana mu gutera, kwita ku bimera, kubaka ifumbire, no gukoresha igitabo cyo gusuzuma ibihingwa.'
-        : 'Bite-size, hands-on, week-by-week actions. Guides children through planting, care, soil layering, and the Plant Doctor diagnostic guides.',
+      role: t('tool2Role'),
+      desc: t('tool2Desc'),
+      icon: BookOpen,
       imageSrc: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80',
-      badge: isRw ? 'Ibikoresho by’Imyigire' : 'Learning Toolkit',
+      badge: isRw ? 'Amakarita y’Imirimo' : 'Mission Playbook',
       uploadNote: 'Photo: Mission cards / logbooks',
     },
     {
       num: '03',
       title: t('tool3Title'),
-      unitCost: '15,000 RWF',
-      desc: isRw
-        ? 'Isanduku y’igiti ifunze ifasha umwana guhuza umusaruro no kuzigama. Yigisha abana kwirinda gusesagura, gucunga ingengo y’imari, no kongera gushora.'
-        : 'A physical wooden savings box that connects harvest and sales directly to saving. Teaches kids delayed gratification, budgeting, and reinvestment.',
+      role: t('tool3Role'),
+      desc: t('tool3Desc'),
+      icon: Shield,
       imageSrc: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80',
       badge: isRw ? 'Isanduku ya DreamDo' : 'DreamDo Saving Box',
       uploadNote: 'Photo: Student Saving Box',
@@ -44,12 +42,11 @@ export default function ToolsSection() {
     {
       num: '04',
       title: t('tool4Title'),
-      unitCost: '100,000 RWF',
-      desc: isRw
-        ? 'Abafashamyigire, abarimu, n’ababyeyi bahabwa amahugurwa n’ubufasha buhoraho kugira ngo ubusitani bukomeze gutanga umusaruro umwaka ku wundi.'
-        : 'Facilitators, teachers, and parents receive training and continuous mentorship to ensure gardens remain sustainable and productive year after year.',
+      role: t('tool4Role'),
+      desc: t('tool4Desc'),
+      icon: Compass,
       imageSrc: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80',
-      badge: isRw ? 'Amahugurwa' : 'Facilitator Coaching',
+      badge: isRw ? 'Amahugurwa n’Ubujyanama' : 'Facilitator Coaching',
       uploadNote: 'Photo: Teacher & facilitator training',
     },
   ];
@@ -58,83 +55,75 @@ export default function ToolsSection() {
     <section id="system" className="bg-[#143A22] text-white py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-12">
-          
-          {/* Left Summary */}
-          <div className="lg:col-span-5 flex flex-col justify-start">
-            <div className="mb-3">
-              <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#C0F038] uppercase font-mono">
-                {t('toolsTag')}
-              </span>
-            </div>
-
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight mb-5">
-              {t('toolsHeading')}
-            </h2>
-
-            <p className="text-base sm:text-lg text-white/70 leading-relaxed font-normal mb-8 max-w-md">
-              {t('toolsBody')}
-            </p>
-
-            {/* Quick highlight badge */}
-            <div className="p-4 rounded-2xl bg-white/5 border border-white/10 max-w-sm space-y-1">
-              <span className="text-xs font-bold text-[#C0F038] uppercase font-mono tracking-wider block">
-                {isRw ? 'Uburyo bwo Kwibeshaho' : 'Social Enterprise Model'}
-              </span>
-              <p className="text-xs text-white/80 leading-relaxed">
-                {isRw
-                  ? 'Ubusitani bwagenewe gukoresha ibikoresho biboneka hafi, umusaruro ukagurishwa kugira ngo wishyure ibikenerwa n’ubwizigame bw’abana.'
-                  : 'Gardens are designed to run with locally available inputs after installation, with produce sales covering running costs and children’s savings.'}
-              </p>
-            </div>
+        {/* Section Header */}
+        <div className="max-w-3xl mb-14 sm:mb-16">
+          <div className="inline-flex items-center gap-2 mb-3">
+            <span className="text-[11px] sm:text-xs font-bold tracking-[0.2em] text-[#C0F038] uppercase font-mono">
+              {t('toolsTag')}
+            </span>
           </div>
 
-          {/* Right 2x2 Grid with Real Photos & Photo Spaces */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {tools.map((item) => (
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+            {t('toolsHeading')}
+          </h2>
+
+          <p className="text-base sm:text-lg text-white/70 font-normal leading-relaxed">
+            {t('toolsBody')}
+          </p>
+        </div>
+
+        {/* 4 Cards Grid - Presented as Learning Enablers */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {tools.map((tool, idx) => {
+            const Icon = tool.icon;
+            return (
               <div
-                key={item.num}
-                className="bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#C0F038]/50 rounded-3xl p-5 sm:p-6 transition-all duration-300 group flex flex-col justify-between"
+                key={idx}
+                className="bg-white/5 border border-white/10 rounded-3xl p-6 sm:p-7 flex flex-col justify-between hover:bg-white/[0.08] hover:border-[#C0F038]/40 transition-all duration-300"
               >
                 <div>
-                  <div className="mb-4">
+                  {/* Photo Space Thumbnail */}
+                  <div className="mb-5 overflow-hidden rounded-2xl">
                     <ImagePlaceholder
-                      src={item.imageSrc}
-                      alt={item.title}
-                      badge={item.badge}
-                      isAuthentic={item.isAuthentic}
-                      aspectRatio="aspect-[16/10]"
-                      uploadNote={item.uploadNote}
-                      className="rounded-2xl"
+                      src={tool.imageSrc}
+                      alt={tool.title}
+                      aspectRatio="aspect-[4/3]"
+                      badge={tool.badge}
+                      isAuthentic={tool.isAuthentic}
+                      uploadNote={tool.uploadNote}
                     />
                   </div>
 
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-mono font-semibold text-[#C0F038]">
-                      {isRw ? `IGIKORESHO CYA ${item.num}` : `TOOL ${item.num}`}
+                  {/* Number & Role Tag */}
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-mono font-bold text-[#C0F038]">
+                      ENABLER {tool.num}
                     </span>
-                    <span className="text-xs font-mono bg-white/10 text-white/90 px-2 py-0.5 rounded-md">
-                      {item.unitCost}
+                    <span className="w-7 h-7 rounded-lg bg-white/10 text-[#C0F038] flex items-center justify-center">
+                      <Icon size={14} />
                     </span>
                   </div>
-                  
-                  <h3 className="text-xl font-bold tracking-tight text-white mb-2">
-                    {item.title}
+
+                  <h3 className="text-xl font-bold text-white mb-1">
+                    {tool.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed mb-4">
-                    {item.desc}
+                  <div className="text-xs font-mono font-semibold text-[#BAF035] mb-3">
+                    {tool.role}
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
+                    {tool.desc}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-white/40">
-                  <span>{isRw ? 'Uburambe bw’Imyaka 20' : 'Durable Asset'}</span>
-                  <span className="text-[#C0F038]">{isRw ? 'Ubufasha Bwuzuye' : 'Full Package Support'}</span>
+                <div className="pt-4 mt-6 border-t border-white/10 flex items-center gap-1.5 text-[11px] font-mono text-white/50">
+                  <Sparkles size={11} className="text-[#C0F038]" />
+                  <span>Educational Enabler</span>
                 </div>
               </div>
-            ))}
-          </div>
-
+            );
+          })}
         </div>
 
       </div>

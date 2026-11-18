@@ -8,6 +8,8 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import LittleFarmerPage from './pages/LittleFarmerPage';
 import SponsorPage from './pages/SponsorPage';
+import ProductsServicesPage from './pages/ProductsServicesPage';
+import StoriesResourcesPage from './pages/StoriesResourcesPage';
 
 export default function App() {
   const [partnerModalOpen, setPartnerModalOpen] = useState(false);
@@ -25,17 +27,46 @@ export default function App() {
           {/* Persistent Navigation */}
           <Navbar onOpenPartnerModal={() => handleOpenModal()} />
 
-          {/* Page Views */}
+          {/* Page Views (6 Core Routes) */}
           <main className="flex-1">
             <Routes>
+              {/* 1. Home */}
               <Route
                 path="/"
                 element={<HomePage onOpenPartnerModal={handleOpenModal} />}
               />
+
+              {/* 2. Our Approach */}
+              <Route
+                path="/our-approach"
+                element={<AboutPage onOpenPartnerModal={handleOpenModal} />}
+              />
+
+              {/* 3. Little Farmer */}
               <Route
                 path="/little-farmer"
                 element={<LittleFarmerPage onOpenPartnerModal={handleOpenModal} />}
               />
+
+              {/* 4. Products & Services */}
+              <Route
+                path="/products-services"
+                element={<ProductsServicesPage onOpenPartnerModal={handleOpenModal} />}
+              />
+
+              {/* 5. For Schools & Communities */}
+              <Route
+                path="/schools-communities"
+                element={<SponsorPage onOpenPartnerModal={handleOpenModal} />}
+              />
+
+              {/* 6. Stories & Resources */}
+              <Route
+                path="/stories-resources"
+                element={<StoriesResourcesPage onOpenPartnerModal={handleOpenModal} />}
+              />
+
+              {/* Backward-compatibility aliases */}
               <Route
                 path="/sponsor"
                 element={<SponsorPage onOpenPartnerModal={handleOpenModal} />}
@@ -44,6 +75,7 @@ export default function App() {
                 path="/about"
                 element={<AboutPage onOpenPartnerModal={handleOpenModal} />}
               />
+
               {/* Fallback catch-all */}
               <Route
                 path="*"

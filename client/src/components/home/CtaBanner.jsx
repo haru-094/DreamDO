@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
+import { ArrowUpRight, ShoppingBag, School, HeartHandshake, Compass } from 'lucide-react';
 
 export default function CtaBanner({ onOpenPartnerModal }) {
   const { t } = useLanguage();
@@ -18,29 +20,83 @@ export default function CtaBanner({ onOpenPartnerModal }) {
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#143A22] leading-[1.08]">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#143A22] leading-[1.08] mb-4">
               {t('ctaHeading1')}<br />
               {t('ctaHeading2')}
             </h2>
-          </div>
 
-          {/* Right Action & Subtext */}
-          <div className="lg:col-span-6 flex flex-col items-start justify-center">
-            <p className="text-base sm:text-lg text-[#143A22]/90 leading-relaxed font-medium mb-8 max-w-lg">
+            <p className="text-base sm:text-lg text-[#143A22]/90 leading-relaxed font-medium max-w-lg">
               {t('ctaBody')}
             </p>
+          </div>
 
-            <button
-              onClick={onOpenPartnerModal}
-              className="inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-bold text-white bg-[#143A22] hover:bg-[#1a4a2c] active:scale-95 transition-all shadow-md hover:shadow-lg cursor-pointer mb-5"
-            >
-              {t('ctaButton')}
-            </button>
+          {/* Right Action Grid for 4 Pathways */}
+          <div className="lg:col-span-6 flex flex-col justify-center">
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              {/* 1. Get a Cone Garden */}
+              <button
+                onClick={() => onOpenPartnerModal && onOpenPartnerModal({
+                  type: 'parent',
+                  message: 'Inquiry: I would like to order a Cone Garden.',
+                })}
+                className="p-4 rounded-2xl bg-[#143A22] text-white hover:bg-[#1a4a2c] active:scale-98 transition-all flex items-center justify-between text-left shadow-sm cursor-pointer"
+              >
+                <div>
+                  <div className="text-[10px] font-mono text-[#BAF035] uppercase font-bold">Households</div>
+                  <div className="text-xs sm:text-sm font-bold">{t('ctaButton1')}</div>
+                </div>
+                <ShoppingBag size={18} className="text-[#BAF035] shrink-0" />
+              </button>
+
+              {/* 2. Explore Little Farmer */}
+              <Link
+                to="/little-farmer"
+                className="p-4 rounded-2xl bg-white text-[#143A22] hover:bg-black/5 active:scale-98 transition-all flex items-center justify-between text-left shadow-2xs cursor-pointer"
+              >
+                <div>
+                  <div className="text-[10px] font-mono text-[#E25822] uppercase font-bold">Curriculum</div>
+                  <div className="text-xs sm:text-sm font-bold">{t('ctaButton2')}</div>
+                </div>
+                <Compass size={18} className="text-[#143A22] shrink-0" />
+              </Link>
+
+              {/* 3. Bring DreamDo to Your School */}
+              <button
+                onClick={() => onOpenPartnerModal && onOpenPartnerModal({
+                  type: 'school',
+                  message: 'Inquiry: Bring Little Farmer to our school campus.',
+                })}
+                className="p-4 rounded-2xl bg-white text-[#143A22] hover:bg-black/5 active:scale-98 transition-all flex items-center justify-between text-left shadow-2xs cursor-pointer"
+              >
+                <div>
+                  <div className="text-[10px] font-mono text-[#143A22]/70 uppercase font-bold">Educators</div>
+                  <div className="text-xs sm:text-sm font-bold">{t('ctaButton3')}</div>
+                </div>
+                <School size={18} className="text-[#143A22] shrink-0" />
+              </button>
+
+              {/* 4. Partner With Us */}
+              <button
+                onClick={() => onOpenPartnerModal && onOpenPartnerModal({
+                  type: 'community',
+                  message: 'Inquiry: Corporate CSR, community hub, or organizational partnership.',
+                })}
+                className="p-4 rounded-2xl bg-white text-[#143A22] hover:bg-black/5 active:scale-98 transition-all flex items-center justify-between text-left shadow-2xs cursor-pointer"
+              >
+                <div>
+                  <div className="text-[10px] font-mono text-[#143A22]/70 uppercase font-bold">Partners & CSR</div>
+                  <div className="text-xs sm:text-sm font-bold">{t('ctaButton4')}</div>
+                </div>
+                <HeartHandshake size={18} className="text-[#143A22] shrink-0" />
+              </button>
+            </div>
 
             {/* Target Audience List */}
-            <div className="text-xs font-semibold text-[#143A22]/70 tracking-wide">
-              {t('ctaAudience')}
+            <div className="text-xs font-semibold text-[#143A22]/80 tracking-wide font-mono text-center sm:text-left">
+              ✦ {t('ctaAudience')}
             </div>
+
           </div>
 
         </div>

@@ -1,10 +1,34 @@
 import React from 'react';
 import ImagePlaceholder from '../common/ImagePlaceholder';
 import { useLanguage } from '../../context/LanguageContext';
+import { TrendingUp, Users, Compass, Award } from 'lucide-react';
 
 export default function StorySection() {
   const { t, language } = useLanguage();
   const isRw = language === 'rw';
+
+  const nisrStats = [
+    {
+      value: t('storyStat1Val'),
+      label: t('storyStat1Label'),
+      icon: TrendingUp,
+    },
+    {
+      value: t('storyStat2Val'),
+      label: t('storyStat2Label'),
+      icon: Users,
+    },
+    {
+      value: t('storyStat3Val'),
+      label: t('storyStat3Label'),
+      icon: Compass,
+    },
+    {
+      value: t('storyStat4Val'),
+      label: t('storyStat4Label'),
+      icon: Award,
+    },
+  ];
 
   return (
     <section id="approach" className="bg-white py-20 sm:py-28 border-b border-black/5">
@@ -18,38 +42,69 @@ export default function StorySection() {
         </div>
 
         {/* 2-Column Story Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-14">
           
           {/* Left Headline */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-6">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#143A22] leading-[1.15] mb-6">
               {t('storyHeading')}
             </h2>
-            <p className="text-base sm:text-lg text-[#465349] leading-relaxed font-normal">
+            <p className="text-base sm:text-lg text-[#465349] leading-relaxed font-normal mb-6">
               {t('storyBody')}
             </p>
-          </div>
-
-          {/* Right Explanation & Quote */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="bg-[#FAF8F5] p-6 rounded-2xl border border-black/5 text-sm text-[#556358] leading-relaxed">
-              <strong className="text-[#143A22] font-semibold block mb-1">
-                {t('storyStatTitle')}
-              </strong>
-              {t('storyStatText')}
-            </div>
 
             {/* Sand Quote Box */}
-            <div className="bg-[#F2EFE8] rounded-2xl p-6 sm:p-8 relative overflow-hidden transition-all hover:shadow-xs">
-              <div className="text-4xl text-[#143A22]/20 font-serif leading-none absolute top-4 left-4 select-none">
+            <div className="bg-[#FAF8F5] rounded-2xl p-6 sm:p-7 border border-black/5 relative overflow-hidden">
+              <div className="text-4xl text-[#143A22]/20 font-serif leading-none absolute top-3 left-4 select-none">
                 “
               </div>
-              <blockquote className="relative z-10 pl-4 sm:pl-6 text-base sm:text-lg font-bold text-[#143A22] italic leading-relaxed">
+              <blockquote className="relative z-10 pl-5 text-base sm:text-lg font-bold text-[#143A22] italic leading-snug">
                 {t('storyQuote')}
               </blockquote>
-              <div className="relative z-10 pl-4 sm:pl-6 mt-3 text-xs text-[#6A786E] font-medium">
+              <div className="relative z-10 pl-5 mt-2 text-xs text-[#6A786E] font-medium font-mono">
                 {t('storyQuoteAuthor')}
               </div>
+            </div>
+          </div>
+
+          {/* Right Verified NISR Statistics Grid */}
+          <div className="lg:col-span-6 space-y-4">
+            <div className="border border-black/10 rounded-2xl p-6 sm:p-7 bg-[#FAF8F5]">
+              <div className="flex items-center justify-between mb-5">
+                <span className="text-xs font-bold uppercase tracking-wider text-[#143A22] font-mono">
+                  {t('storyStatTitle')}
+                </span>
+                <span className="text-[10px] font-mono text-[#E25822] bg-[#E25822]/10 px-2 py-0.5 rounded-full font-bold">
+                  Official Indicators
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {nisrStats.map((st, i) => {
+                  const Icon = st.icon;
+                  return (
+                    <div key={i} className="p-4 rounded-xl bg-white border border-black/5 flex flex-col justify-between">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-2xl sm:text-3xl font-extrabold text-[#143A22] font-mono">
+                          {st.value}
+                        </span>
+                        <div className="w-7 h-7 rounded-lg bg-[#143A22]/5 text-[#143A22] flex items-center justify-center">
+                          <Icon size={14} />
+                        </div>
+                      </div>
+                      <p className="text-xs text-[#5D6B60] leading-snug">
+                        {st.label}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <p className="text-[11px] text-[#839187] font-mono mt-4 pt-3 border-t border-black/5">
+                {isRw
+                  ? 'Imibare yemejwe n’Ikigo cy’Igihugu cy’Ibarurishamibare (NISR).'
+                  : 'Verified against National Institute of Statistics of Rwanda (NISR) publications.'}
+              </p>
             </div>
           </div>
 

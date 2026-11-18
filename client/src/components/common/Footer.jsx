@@ -38,7 +38,7 @@ export default function Footer({ onOpenPartnerModal }) {
             </div>
           </div>
 
-          {/* Center Links */}
+          {/* Center Links (6 Core Routes) */}
           <div className="md:col-span-3 space-y-3">
             <div className="text-xs font-bold uppercase tracking-wider text-[#C0F038]">
               {isRw ? 'Aho Wasura' : 'Navigation'}
@@ -50,18 +50,28 @@ export default function Footer({ onOpenPartnerModal }) {
                 </Link>
               </li>
               <li>
+                <Link to="/our-approach" onClick={scrollToTop} className="hover:text-white transition-colors">
+                  {t('navApproach')}
+                </Link>
+              </li>
+              <li>
                 <Link to="/little-farmer" onClick={scrollToTop} className="hover:text-white transition-colors">
                   {t('navLittleFarmer')}
                 </Link>
               </li>
               <li>
-                <Link to="/sponsor" onClick={scrollToTop} className="hover:text-white transition-colors">
-                  {t('navSponsor')}
+                <Link to="/products-services" onClick={scrollToTop} className="hover:text-white transition-colors">
+                  {t('navProducts')}
                 </Link>
               </li>
               <li>
-                <Link to="/about" onClick={scrollToTop} className="hover:text-white transition-colors">
-                  {t('navAbout')}
+                <Link to="/schools-communities" onClick={scrollToTop} className="hover:text-white transition-colors">
+                  {t('navSchoolsCommunities')}
+                </Link>
+              </li>
+              <li>
+                <Link to="/stories-resources" onClick={scrollToTop} className="hover:text-white transition-colors">
+                  {t('navStories')}
                 </Link>
               </li>
             </ul>

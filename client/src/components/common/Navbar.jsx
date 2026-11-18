@@ -19,9 +19,11 @@ export default function Navbar({ onOpenPartnerModal }) {
 
   const navLinks = [
     { name: t('navHome'), path: '/' },
+    { name: t('navApproach'), path: '/our-approach' },
     { name: t('navLittleFarmer'), path: '/little-farmer' },
-    { name: t('navSponsor'), path: '/sponsor' },
-    { name: t('navAbout'), path: '/about' },
+    { name: t('navProducts'), path: '/products-services' },
+    { name: t('navSchoolsCommunities'), path: '/schools-communities' },
+    { name: t('navStories'), path: '/stories-resources' },
   ];
 
   const isActive = (path) => {
@@ -51,8 +53,8 @@ export default function Navbar({ onOpenPartnerModal }) {
             </span>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-1 sm:space-x-2 bg-black/[0.03] p-1.5 rounded-full border border-black/5">
+          {/* Desktop Navigation Links (6 Routes) */}
+          <nav className="hidden lg:flex items-center space-x-1 bg-black/[0.03] p-1 rounded-full border border-black/5">
             {navLinks.map((link) => {
               const active = isActive(link.path);
               return (
@@ -60,7 +62,7 @@ export default function Navbar({ onOpenPartnerModal }) {
                   key={link.path}
                   to={link.path}
                   onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                  className={`text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full transition-all duration-200 ${
+                  className={`text-xs font-semibold px-3 py-1.5 rounded-full transition-all duration-200 whitespace-nowrap ${
                     active
                       ? 'bg-[#143A22] text-white shadow-2xs'
                       : 'text-[#536156] hover:text-[#143A22] hover:bg-black/5'
@@ -73,7 +75,7 @@ export default function Navbar({ onOpenPartnerModal }) {
           </nav>
 
           {/* Desktop Action & Language Switcher */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2.5">
             {/* Language Switcher Toggle */}
             <button
               onClick={toggleLanguage}
@@ -96,10 +98,10 @@ export default function Navbar({ onOpenPartnerModal }) {
           </div>
 
           {/* Mobile Right Controls: Language + Hamburger */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={toggleLanguage}
-              className="px-2.5 py-1 rounded-full text-[11px] font-bold border border-black/10 bg-white text-[#143A22] flex items-center gap-1"
+              className="px-2.5 py-1 rounded-full text-[11px] font-bold border border-black/10 bg-white text-[#143A22] flex items-center gap-1 cursor-pointer"
             >
               <Globe size={11} className="text-[#E25822]" />
               <span>{language.toUpperCase()}</span>
@@ -118,7 +120,7 @@ export default function Navbar({ onOpenPartnerModal }) {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#FAF8F5] border-b border-black/10 px-6 pt-4 pb-6 space-y-4 animate-in fade-in slide-in-from-top-4 duration-200 shadow-lg">
+        <div className="lg:hidden bg-[#FAF8F5] border-b border-black/10 px-6 pt-4 pb-6 space-y-4 animate-in fade-in slide-in-from-top-4 duration-200 shadow-lg">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => {
               const active = isActive(link.path);

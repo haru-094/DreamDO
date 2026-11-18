@@ -96,18 +96,19 @@ export default function PartnerModal({ isOpen, onClose, initialData = null }) {
               </p>
             </div>
 
-            {/* Partner Category Selector */}
-            <div className="grid grid-cols-3 gap-2 mb-6">
+            {/* Category Selector (Products & Partnerships) */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6">
               {[
+                { id: 'product', label: isRw ? 'Gutumiza Igicuruzwa' : 'Order Product' },
+                { id: 'parent', label: isRw ? 'Urugo / Umuryango' : 'Household' },
                 { id: 'school', label: isRw ? 'Ikigo cy’Ishuri' : 'School' },
-                { id: 'parent', label: isRw ? 'Umuryango' : 'Family' },
-                { id: 'community', label: isRw ? 'Umufatanyabikorwa' : 'Partner / NGO' },
+                { id: 'community', label: isRw ? 'Umufatanyabikorwa' : 'Partner / CSR' },
               ].map((tab) => (
                 <button
                   type="button"
                   key={tab.id}
                   onClick={() => setPartnerType(tab.id)}
-                  className={`py-2 px-3 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                  className={`py-2 px-2.5 rounded-xl text-xs font-semibold transition-all cursor-pointer text-center truncate ${
                     partnerType === tab.id
                       ? 'bg-[#143A22] text-white shadow-xs'
                       : 'bg-[#FAF8F5] text-[#556358] hover:bg-black/5'
