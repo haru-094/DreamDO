@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>DreamDo Little Farmer</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      // Redirects any 404 route back to index.html with the route hash
+      var pathSegmentsToKeep = 1;
+      var l = window.location;
+      var repo = l.pathname.split('/')[1];
+      if (repo && repo.toLowerCase() === 'dreamdo') {
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          '/' + repo + '/#' + l.pathname.slice(repo.length + 1) +
+          (l.search ? '&' + l.search.slice(1) : '') +
+          l.hash
+        );
+      } else {
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          '/#' + l.pathname +
+          (l.search ? '&' + l.search.slice(1) : '') +
+          l.hash
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to DreamDo...</p>
+  </body>
+</html>
