@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, MapPin, Compass, ArrowDown } from 'lucide-react';
+import { Sparkles, ArrowDown } from 'lucide-react';
 import ImagePlaceholder from '../common/ImagePlaceholder';
 import { useLanguage } from '../../context/LanguageContext';
 
@@ -75,10 +75,10 @@ export default function AboutHero({ onOpenPartnerModal }) {
           {/* Right Visual Photo Card */}
           <div className="lg:col-span-5">
             <ImagePlaceholder
-              src="/images/school-cone-garden.jpg"
-              alt={isRw ? 'Abanyeshuri ku busitani bw’umunara wa HDPE mu Rwanda' : 'School children at an HDPE vertical cone garden in Rwanda'}
-              caption={isRw ? 'Umuhinzi Muto wa DreamDo mu bikorwa: Abana bita ku busitani bw’ikigo mu Rwanda.' : 'DreamDo Little Farmer in action: Children managing their school vertical garden in Rwanda.'}
-              badge={isRw ? 'Ifoto Nyakuri ya Gahunda' : 'Real School Cohort'}
+              src="/images/school-outdoor-briefing.jpg"
+              alt={isRw ? 'Umufashamyigire wa DreamDo asobanurira abanyeshuri mu Rwanda' : 'DreamDo Little Farmer facilitator briefing students and educators'}
+              caption={isRw ? 'Umufashamyigire wa DreamDo asobanurira abanyeshuri n’abarimu siyanse y’ubuhinzi.' : 'DreamDo Little Farmer facilitator briefing students and educators on experiential agricultural science.'}
+              badge={isRw ? 'Gahunda y’Umuhinzi Muto' : 'DreamDo Little Farmer Program'}
               isAuthentic={true}
               aspectRatio="aspect-[4/3]"
               uploadNote={isRw ? 'Ifoto: Itsinda ry’Abanyeshuri ku Ishuri' : 'Photo: Little Farmer School Cohort'}

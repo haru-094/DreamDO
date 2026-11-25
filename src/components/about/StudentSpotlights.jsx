@@ -19,7 +19,8 @@ export default function StudentSpotlights() {
       quote: isRw
         ? '“Kuyobora abanyeshuri bagenzi banjye byanyigishije siyanse y’ibimera, gukoresha neza amazi, no kubona uko ubuhinzi buhuza n’ikoranabuhanga n’ubucuruzi.”'
         : '“Guiding younger students taught me biological observation, irrigation math, and how modern agriculture connects to science and green innovation.”',
-      imageSrc: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80',
+      imageSrc: '/images/educators-field-transplanting.jpg',
+      isAuthentic: true,
       badge: isRw ? 'Umujyanama Mukuru' : 'Senior Farm Mentor',
     },
     {
@@ -33,7 +34,8 @@ export default function StudentSpotlights() {
       quote: isRw
         ? '“Nateye imbuto, nzibona zikura mu Munara w’Ubusitani, kandi niga uburyo bwo kuzigamira intego yanjye y’ishuri!”'
         : '“I planted seeds, watched them sprout in the Cone Garden, and learned how to budget towards my educational dream goal!”',
-      imageSrc: 'https://images.unsplash.com/photo-1592417817098-8f3d6ef23a41?auto=format&fit=crop&w=600&q=80',
+      imageSrc: '/images/students-hands-on-planting.jpg',
+      isAuthentic: true,
       badge: isRw ? 'Umuhinzi w’Imena' : 'Junior Pioneer',
     },
     {
@@ -47,7 +49,8 @@ export default function StudentSpotlights() {
       quote: isRw
         ? '“Abanyeshuri bacu ntibakibona ubuhinzi nk’umurimo w’ingufu za kera gusa, ahubwo babubona nka siyanse ngiro, intungamubiri, no guhanga udushya.”'
         : '“Our students now see agriculture not as subsistence toil, but as hands-on science, nutrition, and creative problem-solving.”',
-      imageSrc: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80',
+      imageSrc: '/images/school-outdoor-briefing.jpg',
+      isAuthentic: true,
       badge: isRw ? 'Umwalimu w’Icyitegererezo' : 'Certified Facilitator',
     },
   ];

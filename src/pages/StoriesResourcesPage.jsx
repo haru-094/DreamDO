@@ -25,7 +25,7 @@ export default function StoriesResourcesPage({ onOpenPartnerModal }) {
       desc: isRw 
         ? 'Amashusho afatika yereka abantu bakuru n’ababyeyi uburyo bwo gushinga ubusitani bw’umunara wa HDPE mu mwanya uri munsi ya metero kare 1.' 
         : 'Step-by-step practical video demonstration for adult and home growers on erecting and filling the Cone Garden in < 1m² space.',
-      thumbnail: '/images/school-cone-garden.jpg',
+      thumbnail: '/images/urban-compound-cone-gardens.jpg',
       isAuthentic: true,
       url: 'https://www.youtube.com/@dreamdoafrica',
     },
@@ -36,7 +36,8 @@ export default function StoriesResourcesPage({ onOpenPartnerModal }) {
       desc: isRw
         ? 'Uko uvanga imyanda y’ibiribwa y’icyatsi ifite azote n’ibyatsi byumye kugira ngo ubone ifumbire y’umwimerere idanuka.'
         : 'How to balance nitrogen green waste with dry carbon matter to produce odorless, high-nutrient organic compost for vertical gardens.',
-      thumbnail: 'https://images.unsplash.com/photo-1592417817098-8f3d6ef23a41?auto=format&fit=crop&w=600&q=80',
+      thumbnail: '/images/cone-garden-mature-cabbages.jpg',
+      isAuthentic: true,
       url: 'https://www.youtube.com/@dreamdoafrica',
     },
     {
@@ -46,7 +47,8 @@ export default function StoriesResourcesPage({ onOpenPartnerModal }) {
       desc: isRw
         ? 'Uburyo bwo gukora umuti w’umwimerere wica udukoko twangiza amababi ya dodo na epinari udakoresheje imiti y’uruganda.'
         : 'Safe, natural formulation to protect amaranth and tender greens from aphids and caterpillars without toxic synthetic chemicals.',
-      thumbnail: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80',
+      thumbnail: '/images/school-kinyinya-planting.jpg',
+      isAuthentic: true,
       url: 'https://www.youtube.com/@dreamdoafrica',
     },
   ];

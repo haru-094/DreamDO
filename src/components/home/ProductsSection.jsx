@@ -9,8 +9,7 @@ import {
   PlayCircle, 
   ArrowUpRight, 
   ShoppingBag, 
-  CheckCircle2,
-  Users
+  CheckCircle2
 } from 'lucide-react';
 
 export default function ProductsSection({ onOpenPartnerModal }) {
@@ -25,9 +24,9 @@ export default function ProductsSection({ onOpenPartnerModal }) {
       desc: t('prod1Desc'),
       cta: t('prod1Cta'),
       icon: Layers,
-      imageSrc: '/images/school-cone-garden.jpg',
+      imageSrc: '/images/cone-garden-hdpe-rolls.jpg',
       isAuthentic: true,
-      badge: isRw ? 'Ubusitani bwa HDPE' : 'Durable HDPE Cone',
+      badge: isRw ? 'Impapuro za HDPE' : 'Durable HDPE Rolls',
       features: isRw
         ? ['Kuramba kugeza ku myaka 20', 'Buhagarara mu mwanya muto (< 1m²)', 'Bufata ingemwe 50+']
         : ['Up to 20-year lifespan', 'Footprint < 1m² footprint', 'Holds 50+ seedlings'],
@@ -43,8 +42,9 @@ export default function ProductsSection({ onOpenPartnerModal }) {
       desc: t('prod2Desc'),
       cta: t('prod2Cta'),
       icon: HelpCircle,
-      imageSrc: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80',
-      badge: isRw ? 'Ubujyanama' : 'On-Site Advisory',
+      imageSrc: '/images/household-cone-garden-care.jpg',
+      isAuthentic: true,
+      badge: isRw ? 'Ubujyanama mu Rugo' : 'On-Site Advisory',
       features: isRw
         ? ['Gusuzuma ahantu ho guhinga', 'Guhitamo ibihingwa biboneye', 'Gukurikirana umusaruro']
         : ['Site suitability assessment', 'Crop & water planning', 'Ongoing growing support'],
@@ -60,7 +60,8 @@ export default function ProductsSection({ onOpenPartnerModal }) {
       desc: t('prod3Desc'),
       cta: t('prod3Cta'),
       icon: Sprout,
-      imageSrc: 'https://images.unsplash.com/photo-1592417817098-8f3d6ef23a41?auto=format&fit=crop&w=600&q=80',
+      imageSrc: '/images/students-hands-on-planting.jpg',
+      isAuthentic: true,
       badge: isRw ? 'Ingemwe zo Gutera' : 'Ready Seedlings',
       features: isRw
         ? ['Dodo, epinari, salade z’intungamubiri', 'Ingemwe zikura vuba', 'Uburyo bwo kuzitubura']
@@ -77,8 +78,9 @@ export default function ProductsSection({ onOpenPartnerModal }) {
       desc: t('prod4Desc'),
       cta: t('prod4Cta'),
       icon: BookOpen,
-      imageSrc: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80',
-      badge: isRw ? 'Igitabo cy’Imyigire' : 'Playbook Guide',
+      imageSrc: '/images/school-outdoor-briefing.jpg',
+      isAuthentic: true,
+      badge: isRw ? 'Amahugurwa n’Igitabo' : 'Playbook & Training',
       features: isRw
         ? ['Imirimo 28 ifite amashusho', 'Gusuzuma indwara z’ibihingwa', 'Ibikorwa byo gukorera mu rugo no ku ishuri']
         : ['28 illustrated hands-on missions', 'Plant Doctor diagnostic guides', 'Home & classroom friendly'],
@@ -94,8 +96,9 @@ export default function ProductsSection({ onOpenPartnerModal }) {
       desc: t('prod5Desc'),
       cta: t('prod5Cta'),
       icon: PlayCircle,
-      imageSrc: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80',
-      badge: isRw ? 'Amashusho y’Abakuru' : 'For Adult & Home Growers',
+      imageSrc: '/images/urban-compound-cone-gardens.jpg',
+      isAuthentic: true,
+      badge: isRw ? 'Ubusitani mu Bipangu' : 'Urban Compound Videos',
       features: isRw
         ? ['Yagenewe ababyeyi n’abahinzi bakuru', 'Inyigisho zo guhinga mu rugo', 'Kwereka ibikorwa byose mu mashusho']
         : ['Designed for parents & adult growers', 'Practical step-by-step videos', '100% free community access'],

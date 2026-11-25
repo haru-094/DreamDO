@@ -15,9 +15,9 @@ export default function CurriculumTimeline() {
       title: isRw ? 'Imyanda Ihinduka Umurima' : 'Waste Becomes a Farm',
       theme: isRw ? 'Guhanga Imyobo mu Bikoresho no Gutera' : 'Container Engineering & Sowing',
       icon: BookOpen,
-      imageSrc: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80',
-      imageAlt: isRw ? 'Ibikoresho byakoreshejwe, imifuka n’amacupa bihinduka imirima' : 'Recycled containers, sacks, and bottles turned into growing beds',
-      uploadNote: isRw ? 'Ifoto: Gutoranya imyanda no kubaka ubusitani' : 'Photo: Sorting waste & assembling gardens',
+      imageSrc: '/images/cone-garden-hdpe-rolls.jpg',
+      imageAlt: isRw ? 'Impapuro za HDPE n’uburyo bwo guteranya ubusitani' : 'Durable HDPE vertical sheets and Cone Garden assembly',
+      uploadNote: isRw ? 'Ifoto: Impapuro za HDPE' : 'Photo: HDPE rolls & assembly',
       summary: isRw
         ? 'Abana batoranya imyanda yo mu rugo, baturaho imyobo yo kumeneka amazi, bakubaka ubusitani mu macupa, imifuka, n’indobo hamwe no guteranya Ubusitani bw’Umunara (Cone Garden).'
         : 'Children sort household waste, drill drainage holes, and construct bottle, sack, and bucket gardens alongside setting up the Cone Garden.',
@@ -43,9 +43,9 @@ export default function CurriculumTimeline() {
       title: isRw ? 'Gutegura Ubutaka no Gutera' : 'Building Soil & Planting',
       theme: isRw ? 'Ubumenyi bw’Ifumbire n’Ubujyakuzimu bw’Imbuto' : 'Compost Chemistry & Seed Depths',
       icon: Droplets,
-      imageSrc: 'https://images.unsplash.com/photo-1592417817098-8f3d6ef23a41?auto=format&fit=crop&w=600&q=80',
-      imageAlt: isRw ? 'Abana bashyiraho ibyiciro by’ifumbire n’imbuto mu butaka' : 'Children layering compost and planting seeds in soil',
-      uploadNote: isRw ? 'Ifoto: Gutunganya indobo y’ifumbire y’imborera' : 'Photo: Layering mini-compost bucket',
+      imageSrc: '/images/school-musanze-circle.jpg',
+      imageAlt: isRw ? 'Abana basuzuma ubutaka n’imbuto ku munara w’ubusitani' : 'Children gathered in circle inspecting soil and seeds',
+      uploadNote: isRw ? 'Ifoto: Kwiga ubumenyi bw’ubutaka' : 'Photo: Soil science session',
       summary: isRw
         ? 'Abanyeshuri bashyira ibishishwa by’ibiribwa n’ibyatsi mu ndobo z’ifumbire, bagatera imbuto zikura vuba nk’imboga za dodo (amaranth), salade, n’epinari.'
         : 'Learners layer organic food scraps into mini-compost buckets and plant fast-growing indigenous crops like dodo (amaranth), lettuce, and spinach.',
@@ -71,9 +71,9 @@ export default function CurriculumTimeline() {
       title: isRw ? 'Kwitaho & Muganga w’Ibihingwa' : 'Smart Care & The Plant Doctor',
       theme: isRw ? 'Uburyo bwo Kuvomera buciriritse & Muganga w’Ibihingwa' : 'Low-Tech Irrigation & Plant Doctor',
       icon: Scissors,
-      imageSrc: 'https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=600&q=80',
-      imageAlt: isRw ? 'Abana basuzuma amababi y’ibihingwa n’uburyo bwo kuvomera buhonoka' : 'Young learners checking plant leaves and drip irrigation',
-      uploadNote: isRw ? 'Ifoto: Igitabo cyo gusuzuma ubuzima bw’igihingwa' : 'Photo: Plant health diagnostic guide',
+      imageSrc: '/images/students-hands-on-planting.jpg',
+      imageAlt: isRw ? 'Abana bita ku busitani mu bikorwa bifatika' : 'Young learners hands-on caring for plants',
+      uploadNote: isRw ? 'Ifoto: Kwita ku bimera' : 'Photo: Hands-on plant care',
       summary: isRw
         ? 'Abana bubaka uburyo bwo gutonyanga amazi hifashishijwe amacupa n’insinga z’ipamba, bagakora imiti y’ifu y’itunguruurusenda, bakoresha igitabo cyo gusuzuma ibihingwa.'
         : 'Children build gravity drip irrigation, make organic garlic-chili sprays, and use a step-by-step diagnostic guide to keep plants healthy.',
@@ -99,9 +99,9 @@ export default function CurriculumTimeline() {
       title: isRw ? 'Uruhererekane rw’Agaciro & Iserukiramuco ry’Umusaruro' : 'Value Chains & Harvest Celebration',
       theme: isRw ? 'Ubumenyi bw’Isoko, Agaciro n’Ubwizigame' : 'Value Addition, Financial Literacy & Goal Setting',
       icon: Banknote,
-      imageSrc: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80',
-      imageAlt: isRw ? 'Abana bishimira umusaruro n’amasanduku yo kuzigama mu birori by’ishuri' : 'Children celebrating harvest produce and saving boxes at school exhibition',
-      uploadNote: isRw ? 'Ifoto: Iserukiramuco ry’Umusaruro & Isanduku yo Kuzigama' : 'Photo: Harvest Celebration & Saving Box',
+      imageSrc: '/images/cone-garden-mature-cabbages.jpg',
+      imageAlt: isRw ? 'Ubusitani burimo amashu n’imboga zikuze bishimirwa' : 'Flourishing vertical garden with mature cabbages',
+      uploadNote: isRw ? 'Ifoto: Umusaruro w’amashu' : 'Photo: Mature crop harvest',
       summary: isRw
         ? 'Iherezo ry’icyiciro cy’imyigire. Abana basarura imboga nshya, bakiga ibijyanye n’uruhererekane rw’agaciro n’ingengo y’imari, bakamurika umusaruro mu birori by’ikigo, bakizigamira intego zabo z’inzozi.'
         : 'The program capstone. Children harvest fresh greens, explore value chains and budgeting simulations, showcase their learning at a school community expo, and allocate savings toward personal educational goals.',

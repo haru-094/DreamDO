@@ -8,41 +8,44 @@ export default function FieldGallery() {
 
   const galleryItems = [
     {
-      title: isRw ? 'Guhindura Imyanda Umurima' : 'Waste-to-Farm Engineering',
+      title: isRw ? 'G.S. Kinyinya — Gutera Ubusitani' : 'G.S. Kinyinya — Student Cohort',
       desc: isRw
-        ? 'Abana bahindura amacupa ya pulasitiki, imifuka, n’amajerekani imirima itanga umusaruro ifite uburyo bwo kumeneka amazi n’ifumbire y’imborera.'
-        : 'Children convert plastic bottles, sacks, and jerrycans into productive growing containers with proper drainage and compost layering.',
-      imageSrc: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80',
-      badge: isRw ? 'Imyanda Ihinduka Umurima' : 'Waste-to-Farm',
-      uploadNote: isRw ? 'Ifoto: Ubusitani bw’imifuka n’amacupa' : 'Photo: Sacks & bottle gardens',
-    },
-    {
-      title: isRw ? 'Ubusitani bw’Umunara mu Mashuri (HDPE)' : 'School HDPE Cone Gardens',
-      desc: isRw
-        ? 'Ubusitani buhagaritse buramba mu mashuri ya leta i Kigali no mu turere tw’icyaro, bwubakiwe kuramba kugeza ku myaka 20 bukabungabungwa byoroshye.'
-        : 'Our durable vertical gardens in public schools across Kigali and rural districts, built to last up to 20 years with light maintenance.',
-      imageSrc: '/images/school-cone-garden.jpg',
+        ? 'Abanyeshuri ba Groupe Scolaire Kinyinya i Kigali batera imboga mu busitani bw’umunara bwa HDPE bukoranywe ubuhanga.'
+        : 'Students at Groupe Scolaire Kinyinya in Kigali planting their multi-tier HDPE vertical Cone Garden.',
+      imageSrc: '/images/school-kinyinya-planting.jpg',
       isAuthentic: true,
-      badge: isRw ? 'Ubusitani bw’Ishuri' : 'Cone Garden Deployment',
-      uploadNote: isRw ? 'Ifoto: Ubusitani bw’Umunara ku Ishuri' : 'Photo: School Cone Garden',
+      badge: isRw ? 'G.S. Kinyinya' : 'G.S. Kinyinya, Kigali',
+      uploadNote: isRw ? 'Ifoto: G.S. Kinyinya' : 'Photo: G.S. Kinyinya cohort',
     },
     {
-      title: isRw ? 'Kwitaho & Muganga w’Ibihingwa' : 'Smart Care & The Plant Doctor',
+      title: isRw ? 'Ubusitani bw’Umunara mu Bipangu' : 'Urban Compound Deployments',
       desc: isRw
-        ? 'Abana biga kuvomera mu gutonyanga hakoreshejwe amazi make, gusuzuma ibyonnyi, no gukora imiti y’umwimerere y’itunguru ry’umweru n’urusenda.'
-        : 'Children learn resource-efficient drip irrigation, pest troubleshooting, and make natural garlic-chili sprays for plant health.',
-      imageSrc: 'https://images.unsplash.com/photo-1592417817098-8f3d6ef23a41?auto=format&fit=crop&w=800&q=80',
-      badge: isRw ? 'Muganga w’Ibihingwa' : 'The Plant Doctor',
-      uploadNote: isRw ? 'Ifoto: Kuvomera no gusuzuma ibihingwa' : 'Photo: Drip irrigation & inspection',
+        ? 'Ubusitani buhagaritse buramba mu bipangu by’i Kigali no mu turere tw’icyaro, bwubakiwe kuramba kugeza ku myaka 20 mu mwanya muto.'
+        : 'Durable vertical gardens in compounds and school grounds across Rwanda, engineered for a 20-year lifespan in < 1m² space.',
+      imageSrc: '/images/urban-compound-cone-gardens.jpg',
+      isAuthentic: true,
+      badge: isRw ? 'Ubusitani mu Bipangu' : 'Urban Compounds',
+      uploadNote: isRw ? 'Ifoto: Ubusitani mu Bipangu' : 'Photo: Urban compound gardens',
     },
     {
-      title: isRw ? 'Umunsi w’Isoko & Kumurika Umusaruro' : 'Market Day & Expo Day',
+      title: isRw ? 'Umusaruro Mwiza w’Amashu n’Imboga' : 'Abundant High-Yield Harvest',
       desc: isRw
-        ? 'Ku mpera za buri gipimo, abahinzi bakiri bato bamurika umusaruro, bagasobanura ibitabo byabo by’umutungo, bakabitsa inyungu nyazo muri Banki ya DreamDo.'
-        : 'At the end of every cycle, young farmers showcase produce, pitch their learning journals, and deposit real earnings into the DreamDo Bank.',
-      imageSrc: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80',
-      badge: isRw ? 'Umunsi Mukuru w’Isoko' : 'Little Farmers Expo Day',
-      uploadNote: isRw ? 'Ifoto: Ubugurisha ku Munsi w’Isoko' : 'Photo: Market Day transactions',
+        ? 'Umusaruro mwinshi w’amashu n’imboga z’intungamubiri zikura ku munara w’ubusitani binyuze mu gukoresha neza ubutaka n’amazi.'
+        : 'High-density production of healthy cabbages and greens thriving vertically with efficient gravity drip watering.',
+      imageSrc: '/images/cone-garden-mature-cabbages.jpg',
+      isAuthentic: true,
+      badge: isRw ? 'Umusaruro Mwiza' : 'High-Yield Harvest',
+      uploadNote: isRw ? 'Ifoto: Amashu akuze ku munara' : 'Photo: Mature Cone Garden cabbages',
+    },
+    {
+      title: isRw ? 'G.S. St Aloys Musanze — Ibyishimo' : 'G.S. St Aloys Musanze — Celebration',
+      desc: isRw
+        ? 'Abanyeshuri b’i Musanze bishimira intsinzi n’ubumenyi bungutse ku busitani bwabo bw’umunara wa DreamDo.'
+        : 'Students at G.S. St Aloys Musanze proudly celebrating their vertical garden and hands-on agricultural milestones.',
+      imageSrc: '/images/school-musanze-celebration.jpg',
+      isAuthentic: true,
+      badge: isRw ? 'G.S. St Aloys Musanze' : 'G.S. St Aloys Musanze',
+      uploadNote: isRw ? 'Ifoto: Abanyeshuri bishimye' : 'Photo: Student celebration',
     },
   ];
 

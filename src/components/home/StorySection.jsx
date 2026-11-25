@@ -113,21 +113,22 @@ export default function StorySection() {
         {/* Realistic Field Photo Grid Showcase */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
           <ImagePlaceholder
-            src="/images/school-cone-garden.jpg"
-            alt="School children interacting around a multi-tier vertical Cone Garden"
-            caption={isRw ? "Abanyeshuri b'i Rwanda bakorera hamwe ku munara w'ubusitani mu kigo cy'ishuri." : "Students in Rwanda gathered around a school Cone Garden, inspecting daily growth."}
-            badge={isRw ? "Ubusitani bw'Ishuri" : "School Cone Garden"}
+            src="/images/school-kinyinya-planting.jpg"
+            alt="Students at Groupe Scolaire Kinyinya in Kigali planting a multi-tier vertical Cone Garden"
+            caption={isRw ? "Abanyeshuri ba Groupe Scolaire Kinyinya i Kigali batera imboga mu busitani bw'umunara bwa HDPE." : "Students at Groupe Scolaire Kinyinya in Kigali planting their 4-tier vertical Cone Garden."}
+            badge={isRw ? "G.S. Kinyinya, Kigali" : "G.S. Kinyinya, Kigali"}
             isAuthentic={true}
             aspectRatio="aspect-[16/10]"
             uploadNote="Photo: Rwandan students at Cone Garden"
           />
           <ImagePlaceholder
-            src="https://images.unsplash.com/photo-1592417817098-8f3d6ef23a41?auto=format&fit=crop&w=800&q=80"
-            alt="Hands nurturing healthy green seedling sprout in rich soil"
-            caption={isRw ? "Kwiga mu bikorwa: Buri mwana yitondera igihingwa cye kuva ku rubuto." : "Hands-on learning: Every child tends their own plant from seed to maturity."}
-            badge={isRw ? "Ubumenyi bw'Ubutaka" : "Hands-On Soil Science"}
+            src="/images/cone-garden-mature-cabbages.jpg"
+            alt="Multi-tier Cone Garden bursting with mature healthy cabbages"
+            caption={isRw ? "Ubusitani bw'umunara burimo amashu n'imboga zikuze — umusaruro w'ubuhinzi buhagaritse mu mwanya muto." : "A thriving Cone Garden with mature cabbages — proving high vertical yield in compact spaces."}
+            badge={isRw ? "Umusaruro w'Imboga" : "Abundant Harvest"}
+            isAuthentic={true}
             aspectRatio="aspect-[16/10]"
-            uploadNote="Add student seed-planting photo"
+            uploadNote="Photo: Mature Rwandan Cone Garden"
           />
         </div>
 

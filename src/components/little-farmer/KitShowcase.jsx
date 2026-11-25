@@ -17,9 +17,9 @@ export default function KitShowcase() {
       features: isRw
         ? ['Ikozwe muri HDPE iramba imyaka 20', 'Ifata ibihingwa 50+ mu mwanya < 1m²', 'Ikoresha amazi n’ubutaka bike']
         : ['20-year durable HDPE construction', 'Holds 50+ seedlings in < 1m²', 'Water & soil efficient'],
-      imageSrc: '/images/school-cone-garden.jpg',
+      imageSrc: '/images/cone-garden-hdpe-rolls.jpg',
       isAuthentic: true,
-      badge: isRw ? 'Umunara wa HDPE Uramba' : 'Durable HDPE Cone',
+      badge: isRw ? 'Impapuro za HDPE ziramba' : 'Durable HDPE Rolls',
       uploadNote: isRw ? 'Ifoto: Ubusitani bw’Umunara ku Ishuri' : 'Photo: School Cone Garden',
     },
     {
@@ -31,8 +31,9 @@ export default function KitShowcase() {
       features: isRw
         ? ['Igitabo cya Muganga w’Ibihingwa', 'Gahunda yateguriwe imyaka inyuranye', 'Gukurikirana imikurire n’amazi']
         : ['Plant Doctor diagnostic guide', 'Age-differentiated checklists', 'Growth & moisture tracking'],
-      imageSrc: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80',
-      badge: isRw ? 'Igitabo cy’Imirimo' : 'Mission Playbook',
+      imageSrc: '/images/school-musanze-circle.jpg',
+      isAuthentic: true,
+      badge: isRw ? 'Amakarita y’Imirimo' : 'Mission Playbook',
       uploadNote: isRw ? 'Ifoto: Amakarita y’imirimo mu ishuri' : 'Photo: Mission cards in class',
     },
     {
@@ -44,8 +45,9 @@ export default function KitShowcase() {
       features: isRw
         ? ['Ifungishwa urufunguzo rw’igiti', 'Igitabo cy’umutungo gisinywaho n’umwalimu', 'Ihuza ry’imyigire n’inzozi z’umwana']
         : ['Dual-key physical locking', 'Facilitator-countersigned savings ledger', 'Direct link from learning to dream goals'],
-      imageSrc: 'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=600&q=80',
-      badge: isRw ? 'Isanduku yo Kuzigama' : 'Physical Saving Box',
+      imageSrc: '/images/facilitators-cone-garden.jpg',
+      isAuthentic: true,
+      badge: isRw ? 'Ubuyobozi bw’Imyigire' : 'Mentorship & Saving',
       uploadNote: isRw ? 'Ifoto: Umwana azigama ibiceri' : 'Photo: Child saving coins',
     },
     {
@@ -57,8 +59,9 @@ export default function KitShowcase() {
       features: isRw
         ? ['Isarura ryihuse mu minsi 7–21', 'Imbuto gakondo z’iwacu z’intungamubiri', 'Ifumbire y’umwimerere yo gutangiza']
         : ['Fast 7–21 day harvest turnaround', 'Heirloom indigenous seeds', 'Compost & organic substrate starter'],
-      imageSrc: 'https://images.unsplash.com/photo-1592417817098-8f3d6ef23a41?auto=format&fit=crop&w=600&q=80',
-      badge: isRw ? 'Amapaki y’Imbuto' : 'Seed & Substrate Pack',
+      imageSrc: '/images/students-hands-on-planting.jpg',
+      isAuthentic: true,
+      badge: isRw ? 'Ingemwe zo Gutera' : 'Seedling Planting',
       uploadNote: isRw ? 'Ifoto: Imbuto n’ingemwe nto' : 'Photo: Seeds & young sprouts',
     },
   ];

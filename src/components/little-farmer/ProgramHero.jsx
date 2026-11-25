@@ -82,10 +82,10 @@ export default function ProgramHero({ onOpenPartnerModal }) {
           {/* Right Hero Field Photo */}
           <div className="lg:col-span-5">
             <ImagePlaceholder
-              src="/images/school-cone-garden.jpg"
+              src="/images/school-cohort-celebration.jpg"
               alt={isRw ? 'Abana bo mu Rwanda ku busitani bw’umunara mu kigo cy’ishuri' : 'Rwandan children gathered around their school vertical Cone Garden'}
-              caption={isRw ? 'Abana ku busitani bw’umunara mu kigo cy’ishuri mu Rwanda — biga guhinga mu bikorwa nyabyo.' : 'Children at a school cone garden in Rwanda — learning food production firsthand.'}
-              badge={isRw ? 'Itsinda Nyaryo ry’Ishuri' : 'Real School Cohort'}
+              caption={isRw ? 'Abanyeshuri bishimiye ubusitani bwabo bw’umunara — kumenya ubuhinzi no guhanga udushya mu bikorwa.' : 'Students celebrating their vertical Cone Garden — discovering agricultural science and innovation firsthand.'}
+              badge={isRw ? 'Itsinda ry’Abanyeshuri mu Rwanda' : 'Rwanda School Cohorts'}
               isAuthentic={true}
               aspectRatio="aspect-[4/3]"
               uploadNote={isRw ? 'Ifoto: Ubusitani bw’Ishuri mu Rwanda' : 'Photo: Rwandan school Cone Garden'}

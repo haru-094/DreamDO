@@ -99,10 +99,10 @@ export default function PilotSpotlight({ onOpenPartnerModal }) {
 
           <div className="lg:col-span-5">
             <ImagePlaceholder
-              src="/images/school-cone-garden.jpg"
+              src="/images/school-kinyinya-planting.jpg"
               alt={isRw ? 'Abana bitabiriye gahunda y’Umuhinzi Muto mu Rwanda' : 'Children participating in the Little Farmer school program in Rwanda'}
-              caption={isRw ? 'Abana ku busitani bw’umunara mu Rwanda — guhindura umwanya muto ubusitani butanga ibiribwa.' : 'School cone garden cohort in Rwanda — turning wasted spaces into food labs.'}
-              badge={isRw ? 'Igerageza rya Masaka' : 'Masaka Sector Pilot'}
+              caption={isRw ? 'Abana ba G.S. Kinyinya batera imboga ku munara w’ubusitani mu Rwanda — guhindura umwanya muto ubusitani butanga ibiribwa.' : 'Students at G.S. Kinyinya in Rwanda planting their vertical Cone Garden — experiential food production in action.'}
+              badge={isRw ? 'G.S. Kinyinya, Kigali' : 'G.S. Kinyinya, Kigali'}
               isAuthentic={true}
               aspectRatio="aspect-[16/10]"
               uploadNote={isRw ? 'Ifoto: Umunsi Mukuru w’Isoko' : 'Photo: Little Farmers Expo Day'}

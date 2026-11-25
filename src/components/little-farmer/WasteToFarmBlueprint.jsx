@@ -65,7 +65,7 @@ export default function WasteToFarmBlueprint() {
       ],
       suitableCrops: '50+ simultaneous plants: lettuce, amaranth, herbs, and strawberries',
       impactNote: 'Installed directly on school campuses across the Masaka Sector and beyond.',
-      imageSrc: '/images/school-cone-garden.jpg',
+      imageSrc: '/images/cone-garden-hdpe-rolls.jpg',
       isAuthentic: true,
       uploadNote: 'Photo: School Cone Garden in Rwanda',
     },

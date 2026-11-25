@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ArrowUpRight, Sparkles, ShoppingBag, HeartHandshake } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import HeroIllustration from './HeroIllustration';
 import ImagePlaceholder from '../common/ImagePlaceholder';
 import { useLanguage } from '../../context/LanguageContext';
 
 export default function Hero({ onOpenPartnerModal }) {
-  const [viewMode, setViewMode] = useState('illustration'); // 'illustration' or 'real'
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   const scrollToProducts = () => {
     const el = document.getElementById('products');
@@ -84,54 +82,19 @@ export default function Hero({ onOpenPartnerModal }) {
             </div>
           </div>
 
-          {/* Right Column: Toggle between Figma Concept & Real Field Photo */}
+          {/* Right Column: Authentic Field Photo */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center">
-            
-            {/* View Switcher Toggle */}
-            <div className="mb-4 inline-flex items-center gap-1 bg-white p-1 rounded-full border border-black/10 shadow-2xs">
-              <button
-                onClick={() => setViewMode('illustration')}
-                className={`px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                  viewMode === 'illustration'
-                    ? 'bg-[#143A22] text-white shadow-2xs'
-                    : 'text-[#5C6A60] hover:text-[#143A22]'
-                }`}
-              >
-                {t('heroToggleConcept')}
-              </button>
-              <button
-                onClick={() => setViewMode('real')}
-                className={`px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer ${
-                  viewMode === 'real'
-                    ? 'bg-[#143A22] text-white shadow-2xs'
-                    : 'text-[#5C6A60] hover:text-[#143A22]'
-                }`}
-              >
-                {t('heroTogglePhoto')}
-              </button>
+            <div className="w-full max-w-[520px] animate-in fade-in duration-300">
+              <ImagePlaceholder
+                src="/images/school-musanze-celebration.jpg"
+                alt="Students in Rwanda celebrating their vertical Cone Garden at G.S. St Aloys Musanze"
+                caption={t('heroPhotoCaption')}
+                badge="G.S. St Aloys Musanze, Rwanda"
+                isAuthentic={true}
+                aspectRatio="aspect-[4/3]"
+                uploadNote="DreamDo Little Farmer in Rwandan Schools"
+              />
             </div>
-
-            {/* Visual Container */}
-            <div className="w-full flex justify-center items-center">
-              {viewMode === 'illustration' ? (
-                <div className="w-full animate-in fade-in duration-300">
-                  <HeroIllustration />
-                </div>
-              ) : (
-                <div className="w-full max-w-[480px] animate-in fade-in duration-300">
-                  <ImagePlaceholder
-                    src="/images/school-cone-garden.jpg"
-                    alt="Rwandan children at school vertical Cone Garden"
-                    caption={t('heroPhotoCaption')}
-                    badge={t('heroPilot')}
-                    isAuthentic={true}
-                    aspectRatio="aspect-square"
-                    uploadNote="Photo: Rwandan school Cone Garden"
-                  />
-                </div>
-              )}
-            </div>
-
           </div>
 
         </div>
