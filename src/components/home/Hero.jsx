@@ -84,14 +84,14 @@ export default function Hero({ onOpenPartnerModal }) {
 
           {/* Right Column: Authentic Field Photo */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center">
-            <div className="w-full max-w-[520px] animate-in fade-in duration-300">
+            <div className="w-full max-w-[460px] animate-in fade-in duration-300">
               <ImagePlaceholder
-                src="/images/school-musanze-celebration.jpg"
-                alt="Students in Rwanda celebrating their vertical Cone Garden at G.S. St Aloys Musanze"
+                src="/images/school-cohort-celebration.jpg"
+                alt="Students in Rwanda celebrating their vertical Cone Garden cohort with green crops"
                 caption={t('heroPhotoCaption')}
-                badge="G.S. St Aloys Musanze, Rwanda"
+                badge="Groupe Scolaire Kinyinya, Rwanda"
                 isAuthentic={true}
-                aspectRatio="aspect-[4/3]"
+                aspectRatio="aspect-[4/5]"
                 uploadNote="DreamDo Little Farmer in Rwandan Schools"
               />
             </div>
